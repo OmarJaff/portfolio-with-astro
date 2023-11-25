@@ -1,1 +1,16 @@
-<button>button</button>
+--- 
+
+const {hasTitle = true , title = "button", class: ClassName = "text-white" } = Astro.props;
+--- 
+
+
+<button class:list=`${ClassName} capitalize`>
+
+     {hasTitle && <p>{title}</p>}
+
+    <slot>
+
+    </slot>
+
+</button>
+
