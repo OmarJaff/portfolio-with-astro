@@ -1,0 +1,23 @@
+---
+
+import Logo from "./Logo.astro";
+import Menu from "./Menu.astro";
+import Button from "./Button.astro";
+
+---
+
+<div class="text-white flex justify-between px-4 mt-4 items-center">
+    
+    <div>
+        <Logo className="text-white w-[85px]"></Logo>
+    </div>
+
+    <div class="flex gap-4">
+        <div>
+            <Menu></Menu>
+        </div>
+        <div>
+            <Button />
+        </div>
+    </div>
+</div>
