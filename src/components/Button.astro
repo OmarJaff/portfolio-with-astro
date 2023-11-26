@@ -1,10 +1,10 @@
 --- 
 
-const {hasTitle = true , title = "button", class: ClassName = "text-white" } = Astro.props;
+const {hasTitle = true , title = "button", class: ClassName = "text-white", onClick } = Astro.props;
 --- 
 
 
-<button class:list=`${ClassName} capitalize`>
+<button x-on:click=`${onClick}` class:list=`${ClassName} capitalize`>
 
      {hasTitle && <p>{title}</p>}
 
