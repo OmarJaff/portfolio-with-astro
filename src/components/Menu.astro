@@ -26,7 +26,7 @@ import Button from "./Button.astro";
     x-show="open"
     x-transition
     x-on:click="open = false"
-    class="relative flex min-h-screen items-start mt-2 justify-center p-6"
+    class="relative flex min-h-screen items-start justify-center p-6"
   >
     <div
       x-on:click.stop
@@ -35,12 +35,8 @@ import Button from "./Button.astro";
     >
       <!-- Title -->
       <div class="flex flex-row-reverse items-center justify-between">
-        <button
-          aria-label="Close menu"
-          class="-m-1 p-1"
-          type="button"
-          data-headlessui-state="open"
-          ><svg viewBox="0 0 24 24" aria-hidden="true" class="h-6 w-6"
+        <Button @click="open = false" hasTitle={false} class="-m-1 p-1">
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="h-6 w-6"
             ><path
               d="m17.25 6.75-10.5 10.5M6.75 6.75l10.5 10.5"
               fill="none"
@@ -48,8 +44,10 @@ import Button from "./Button.astro";
               stroke-width="1.5"
               stroke-linecap="round"
               stroke-linejoin="round"></path></svg
-          ></button
-        ><h2 class="text-sm font-medium">Navigation</h2>
+          >
+        </Button>
+
+        <h2 class="text-sm font-medium">Navigation</h2>
       </div>
 
       <!-- Content -->
