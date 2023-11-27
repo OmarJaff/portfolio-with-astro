@@ -4,8 +4,10 @@ import Menu from "./Menu.astro";
 import MenuItem from "./MenuItem.astro";
 
 const { class: ClassName } = Astro.props;
+const currentPath = new URL(Astro.request.url).pathname;
 
 const MenuItems = [
+  { title: "Home", url: "/" },
   { title: "About", url: "/about" },
   { title: "Articles", url: "/articles" },
   { title: "Projects", url: "/projects" },
@@ -42,7 +44,18 @@ const MenuItems = [
     </svg>
   </Button>
 
-  <Menu class={ClassName}>
-    {MenuItems.map((item) => <MenuItem title={item.title} url={item.url} />)}
+  <Menu class="bg-primary-black-400">
+    {
+      MenuItems.map((item) => (
+        <MenuItem
+          class:list={[
+            currentPath === item.url ? "bg-white rounded-full text-black " : "",
+            "px-4 py-2 lg:px-6 lg:py-3 text-primary-gray-200 lg:font-medium text-sm lg:text-md",
+          ]}
+          title={item.title}
+          url={item.url}
+        />
+      ))
+    }
   </Menu>
 </div>
