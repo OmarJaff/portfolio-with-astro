@@ -55,27 +55,7 @@ import Button from "./Button.astro";
         <ul
           class="-my-2 divide-y divide-primary-gray-400 text-base dark:divide-primary-gray-400/5"
         >
-          <li>
-            <a class="block py-2" data-headlessui-state="open" href="/about"
-              >About</a
-            >
-          </li><li>
-            <a class="block py-2" data-headlessui-state="open" href="/articles"
-              >Articles</a
-            >
-          </li><li>
-            <a class="block py-2" data-headlessui-state="open" href="/projects"
-              >Projects</a
-            >
-          </li><li>
-            <a class="block py-2" data-headlessui-state="open" href="/speaking"
-              >Speaking</a
-            >
-          </li><li>
-            <a class="block py-2" data-headlessui-state="open" href="/uses"
-              >Uses</a
-            >
-          </li>
+          <slot />
         </ul>
       </nav>
     </div>
