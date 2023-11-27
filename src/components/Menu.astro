@@ -1,5 +1,6 @@
 ---
 import Button from "./Button.astro";
+const { class: className } = Astro.props;
 ---
 
 <!-- Modal -->
@@ -11,7 +12,7 @@ import Button from "./Button.astro";
   aria-modal="true"
   x-id="['modal-title']"
   :aria-labelledby="$id('modal-title')"
-  class="fixed inset-0 z-10 overflow-y-auto"
+  class=`fixed inset-0 z-10 overflow-y-auto`
 >
   <!-- Overlay -->
   <div
@@ -31,7 +32,7 @@ import Button from "./Button.astro";
     <div
       x-on:click.stop
       x-trap.noscroll.inert="open"
-      class="relative w-full max-w-2xl overflow-y-auto rounded-3xl bg-primary-black-700 text-primary-gray-200 p-8 shadow-lg"
+      class=`${className} relative w-full max-w-2xl overflow-y-auto rounded-3xl p-8 shadow-lg`
     >
       <!-- Title -->
       <div class="flex flex-row-reverse items-center justify-between">

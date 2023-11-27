@@ -2,6 +2,7 @@
 import Button from "./Button.astro";
 import Menu from "./Menu.astro";
 import MenuItem from "./MenuItem.astro";
+
 const MenuItems = [
   { title: "Home", url: "/" },
   { title: "About", url: "/about" },
@@ -40,11 +41,7 @@ const MenuItems = [
     </svg>
   </Button>
 
-  <Menu>
-    {
-      MenuItems.map((item) => (
-        <MenuItem class="" title={item.title} url={item.url} />
-      ))
-    }
+  <Menu class="bg-primary-black-700 text-white">
+    {MenuItems.map((item) => <MenuItem title={item.title} url={item.url} />)}
   </Menu>
 </div>
