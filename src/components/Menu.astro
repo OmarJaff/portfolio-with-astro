@@ -3,6 +3,12 @@ import Button from "./Button.astro";
 const { class: className } = Astro.props;
 ---
 
+<nav class=`${className} hidden md:flex px-6 rounded-full`>
+  <ul class="flex gap-6">
+    <slot />
+  </ul>
+</nav>
+
 <!-- Modal -->
 <div
   x-show="open"
