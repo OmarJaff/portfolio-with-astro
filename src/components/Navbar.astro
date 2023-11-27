@@ -3,6 +3,8 @@ import Button from "./Button.astro";
 import Menu from "./Menu.astro";
 import MenuItem from "./MenuItem.astro";
 
+const { class: ClassName } = Astro.props;
+
 const MenuItems = [
   { title: "About", url: "/about" },
   { title: "Articles", url: "/articles" },
@@ -18,7 +20,7 @@ const MenuItems = [
   Alpine.plugin(focus);
 </script>
 
-<div x-data="{ open: true }" class="flex justify-center">
+<div x-data="{ open: false }" class="flex justify-center">
   <Button
     @click="open = true"
     title="Menu"
@@ -40,7 +42,7 @@ const MenuItems = [
     </svg>
   </Button>
 
-  <Menu class="bg-primary-black-400 text-white">
+  <Menu class={ClassName}>
     {MenuItems.map((item) => <MenuItem title={item.title} url={item.url} />)}
   </Menu>
 </div>
