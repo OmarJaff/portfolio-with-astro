@@ -26,7 +26,10 @@ const MenuItems = [
   <Button
     @click="open = true"
     title="Menu"
-    class="md:hidden rounded-full bg-primary-black-400 px-4 py-2 flex items-center gap-3"
+    class:list={[
+      ClassName,
+      "md:hidden rounded-full bg-primary-gray-600/50 px-4 py-2 flex items-center gap-3",
+    ]}
   >
     <svg
       class="h-3 w-3 text-primary-gray-200"
@@ -44,7 +47,7 @@ const MenuItems = [
     </svg>
   </Button>
 
-  <Menu class="bg-primary-black-400">
+  <Menu class={ClassName}>
     {
       MenuItems.map((item) => (
         <MenuItem
