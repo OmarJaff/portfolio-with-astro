@@ -12,7 +12,7 @@ import DarkModeToggler from "./DarkModeToggler.astro";
     <div class="flex flex-col justify-center items-center w-full">
       <div class="flex w-full justify-between md:my-16 items-center gap-x-2">
         <div
-          class="hidden md:flex bg-primary-black-base dark:bg-secondary-black px-4 py-2 lg:px-6 lg:py-3 rounded-full"
+          class="hidden md:flex bg-primary-black-base dark:bg-secondary-black px-4 py-2.5 lg:px-6 rounded-full"
         >
           <SocialIcons />
         </div>
@@ -23,11 +23,11 @@ import DarkModeToggler from "./DarkModeToggler.astro";
           <Logo
             class="text-primary-black-base font-extrabold dark:text-white md:absolute md:bottom-20 md:w-full md:justify-center items-baseline"
           />
-          <Navbar class="bg-primary-black-base dark:bg-secondary-black" />
+          <Navbar class="bg-primary-black-base dark:bg-secondary-black p-1" />
         </div>
 
         <DarkModeToggler
-          class="bg-primary-black-base dark:bg-secondary-black px-4 py-2 lg:px-6 lg:py-3 rounded-full transition duration-100 md:hover:text-primary-gray-300"
+          class="bg-primary-black-base dark:bg-secondary-black px-4 py-2.5 lg:px-6 rounded-full transition duration-100 md:hover:text-primary-gray-300"
         />
       </div>
     </div>
