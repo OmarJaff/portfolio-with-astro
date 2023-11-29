@@ -9,7 +9,7 @@ import Footer from "../components/Footer.astro";
 ---
 
 <!doctype html>
-<html lang="en" class="bg-black font-sans h-full antialiased">
+<html lang="en" class="font-sans h-full antialiased">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Omar Jaff's Portfolio" />
@@ -18,12 +18,14 @@ import Footer from "../components/Footer.astro";
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <div class="mx-auto max-w-7xl lg:px-8 md:mt-4">
-    <Header />
-    <body>
-      <slot />
-    </body>
-    <Footer />
+  <div class="bg-primary-white dark:bg-black">
+    <div class="mx-auto max-w-7xl lg:px-8 md:pt-10">
+      <Header />
+      <body>
+        <slot />
+      </body>
+      <Footer />
+    </div>
   </div>
 
 

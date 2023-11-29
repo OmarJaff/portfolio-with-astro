@@ -1,18 +1,18 @@
 ---
 import Logo from "./Logo.astro";
-import Button from "./Button.astro";
 import Navbar from "./Navbar.astro";
 import SocialIcons from "./SocialIcons.astro";
+import DarkModeToggler from "./DarkModeToggler.astro";
 ---
 
 <div
-  class="text-white flex-col md:flex justify-between px-4 sm:px-8 mt-6 items-center"
+  class="text-white flex-col md:flex justify-between px-4 sm:px-8 items-center"
 >
   <div class="flex gap-x-4 md:gap-x-0 md:w-full md:justify-between">
     <div class="flex flex-col justify-center items-center w-full">
       <div class="flex w-full justify-between md:my-16 items-center gap-x-2">
         <div
-          class="hidden md:flex bg-primary-gray-600/60 px-4 py-2 lg:px-6 lg:py-3 rounded-full"
+          class="hidden md:flex bg-secondary-black px-4 py-2 lg:px-6 lg:py-3 rounded-full"
         >
           <SocialIcons />
         </div>
@@ -23,29 +23,12 @@ import SocialIcons from "./SocialIcons.astro";
           <Logo
             class="text-white md:absolute md:bottom-20 md:w-full md:justify-center items-baseline"
           />
-          <Navbar class="bg-primary-gray-600/60" />
+          <Navbar class="bg-secondary-black" />
         </div>
 
-        <Button
-          hasTitle={false}
-          class="bg-primary-gray-600/60 px-4 py-2 lg:px-6 lg:py-3 rounded-full"
-        >
-          <svg
-            class="h-6 w-6"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="w-6 h-6"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"
-            ></path>
-          </svg>
-        </Button>
+        <DarkModeToggler
+          class="bg-secondary-black px-4 py-2 lg:px-6 lg:py-3 rounded-full"
+        />
       </div>
     </div>
   </div>
