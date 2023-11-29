@@ -17,6 +17,20 @@ import Footer from "../components/Footer.astro";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <!-- This controls the logic for changing the dark mode buttons appearance based on the users set preference -->
+    <script is:inline>
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+        localStorage.theme = "dark";
+      } else {
+        document.documentElement.classList.remove("dark");
+        localStorage.theme = "light";
+      }
+    </script>
   </head>
   <div class="bg-primary-white dark:bg-black">
     <div class="mx-auto max-w-7xl lg:px-8 md:pt-10">
