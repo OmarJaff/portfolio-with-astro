@@ -51,8 +51,8 @@ const MenuItems = [
           class:list={[
             currentPath === item.url
               ? "md:bg-white md:rounded-full md:text-black border-b border-white/60"
-              : "",
-            "px-4 py-2 lg:px-6 lg:py-3 text-primary-gray-200 lg:font-medium text-sm lg:text-md",
+              : "transition duration-100 hover:text-primary-gray-300",
+            "px-4 py-2 lg:px-6 lg:py-3 text-primary-gray-200 lg:font-medium text-sm lg:text-md ",
           ]}
           title={item.title}
           url={item.url}
