@@ -29,11 +29,6 @@ const { class: className } = Astro.props;
     }));
   });
 </script>
-<style is:global>
-  [x-cloak] {
-    display: none !important;
-  }
-</style>
 
 <div x-data="toggler">
   <Button @click="toggle()" hasTitle={false} class={className}>
