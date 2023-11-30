@@ -1,5 +1,12 @@
 ---
+import MenuItem from "./MenuItem.astro";
 
+const MenuItems = [
+  { title: "About", url: "/about" },
+  { title: "Articles", url: "/articles" },
+  { title: "Projects", url: "/projects" },
+  { title: "Contact", url: "/contact" },
+];
 ---
 
 <footer class="mt-32 flex-none">
@@ -11,23 +18,19 @@
         <div
           class="flex flex-col items-center justify-between gap-6 sm:flex-row"
         >
-          <div
+          <ul
             class="flex flex-wrap justify-center gap-x-6 gap-y-1 text-sm font-medium text-zinc-800 dark:text-zinc-200"
           >
-            <a
-              class="transition text-primary-black-base dark:text-white duration-100 md:hover:text-primary-gray-300"
-              href="/about">About</a
-            ><a
-              class="transition text-primary-black-base dark:text-white duration-100 md:hover:text-primary-gray-300"
-              href="/articles">Articles</a
-            ><a
-              class="transition text-primary-black-base dark:text-white duration-100 md:hover:text-primary-gray-300"
-              href="/projects">Projects</a
-            ><a
-              class="transition text-primary-black-base dark:text-white duration-100 md:hover:text-primary-gray-300"
-              href="/contact">Contact</a
-            >
-          </div><p
+            {
+              MenuItems.map((item) => (
+                <MenuItem
+                  class="transition text-primary-black-base dark:text-white duration-100 md:hover:text-primary-gray-300"
+                  title={item.title}
+                  url={item.url}
+                />
+              ))
+            }
+          </ul><p
             class="text-sm text-primary-gray-300 dark:text-gray-primary-300"
           >
             ©<script in:line>
