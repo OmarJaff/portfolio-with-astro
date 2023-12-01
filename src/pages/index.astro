@@ -1,27 +1,55 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
 ---
 
 <Layout title="Omar's Portfolio">
   <main>
     <header
-      class="px-4 sm:px-8 my-10 sm:my-6 space-y-6 selection:text-white selection:bg-primary-black-base dark:selection:text-black dark:selection:bg-white/80"
+      class="px-4 sm:px-8 my-10 space-y-8 selection:text-white selection:bg-primary-black-base dark:selection:text-black dark:selection:bg-white/80"
     >
       <div>
         <h1
-          class="text-primary-black-base xl:w-3/4 dark:text-white font-semibold text-4xl lg:text-7xl leading-snug md:leading-normal"
+          class="text-primary-black-base xl:w-3/4 dark:text-white font-semibold text-4xl md:text-7xl leading-snug"
         >
           Full Stack Web Developer & API Integration Specialist
         </h1>
       </div>
       <div>
         <p
-          class="dark:text-primary-gray-200 text-primary-black-base md:w-2/3 text-base md:text-lg leading-8"
+          class="dark:text-primary-gray-200 text-primary-black-base md:w-2/3 text-base md:text-lg leading-6 pr-20"
         >
           Hello World! I'm Omar, a seasoned full-stack developer with 4 years of
           experience in web enchantment. I'm fluent in HTML, CSS, JavaScript,
           and PHP, and I boast some serious dance moves with financial APIs.
         </p>
+      </div>
+
+      <div
+        class="dark:text-white font-semibold flex w-full justify-between items-center pt-16"
+      >
+        <div class="space-y-2">
+          <p class="font-semibold">Let's Talk</p>
+          <p><a href="mailto:me@omarjaff.com">me@omarjaff.com</a></p>
+        </div>
+        <div
+          class="text-white flex space-x-2 items-center bg-primary-black-base dark:bg-secondary-black px-4 py-3 lg:px-6 rounded-full"
+        >
+          <p>Scroll Down</p>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 4.5v15m0 0l6.75-6.75M12 19.5l-6.75-6.75"></path>
+          </svg>
+        </div>
       </div>
     </header>
   </main>
