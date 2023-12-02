@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Button from "../components/Button.astro";
+import ProjectCard from "../components/ProjectCard.astro";
 ---
 
 <Layout title="Omar's Portfolio">
@@ -52,5 +52,19 @@ import Button from "../components/Button.astro";
         </div>
       </div>
     </header>
+    <section
+      class="dark:text-white text-primary-black-base px-4 sm:px-8 space-y-6"
+    >
+      <div class="space-y-2">
+        <h2 class="text-lg">Projects</h2>
+        <p class="text-sm dark:text-primary-gray-200 text-primary-black-base">
+          Explore my cutting-edge fintech projects where seamless web
+          application development meets powerful API integrations.
+        </p>
+      </div>
+      <div>
+        <ProjectCard />
+      </div>
+    </section>
   </main>
 </Layout>
