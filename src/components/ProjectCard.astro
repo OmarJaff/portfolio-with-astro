@@ -6,7 +6,7 @@ const { projectIntro = "Integration with Western Union" } = Astro.props;
 const { imgSrc = "/WU-Dark.svg" } = Astro.props;
 const { technologies = "Integration, API, JSON, XYZ" } = Astro.props;
 const {
-  description = "We developed is a crowdfunding platform for friends and family Allowing users to take personal loans from their network without a traditional financial institution. And this is the second part of the paragraph to give additional details about this project.",
+  description = "We developed is a crowdfunding platform for friends and family Allowing users to take personal loans from their network without a traditional financial institution. And this is the second part of the paragraph to give additional details about this project and part of the paragraph to give additional details about this project.",
 } = Astro.props;
 
 const paragraphs = description.split(". ");
@@ -35,7 +35,7 @@ const FormatedProjectDate = new Date(projectDate).toLocaleString("en-US", {
             height="36"
             decoding="async"
             data-nimg="1"
-            class="h-16 w-16 flex-none"
+            class="h-10 w-20 flex-none"
             src={imgSrc}
             style="color: transparent;"
           />
