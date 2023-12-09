@@ -9,9 +9,14 @@ const {
   description = "We developed is a crowdfunding platform for friends and family Allowing users to take personal loans from their network without a traditional financial institution. And this is the second part of the paragraph to give additional details about this project.",
 } = Astro.props;
 
-const { projectDate = "2023-01" } = Astro.props;
-
 const paragraphs = description.split(". ");
+
+const { projectDate = "2023-02" } = Astro.props;
+
+const FormatedProjectDate = new Date(projectDate).toLocaleString("en-US", {
+  month: "long",
+  year: "numeric",
+});
 ---
 
 <div style="opacity: 1; transform: none;">
@@ -39,13 +44,17 @@ const paragraphs = description.split(". ");
           >
             {projectTitle}
           </h3>
-        </div><div class="mt-1 flex gap-x-4 sm:mt-0 lg:block">
+        </div><div
+          x-data="{ date: '2023-12-07T17:04:28Z', formatDate(date) { return new Date(date).toLocaleString('en-US', { month: 'long', year: 'numeric' }); } }"
+          class="mt-1 flex gap-x-4 sm:mt-0 lg:block"
+        >
           <p
             class="text-sm tracking-tight text-neutral-950 dark:text-white after:ml-4 after:font-semibold after:text-neutral-300 after:content-['/'] lg:mt-2 lg:after:hidden"
           >
             {technologies}
-          </p><p class="text-sm text-neutral-950 dark:text-white lg:mt-2">
-            <time datetime={projectDate}>{projectDate}</time>
+          </p>
+          <p class="text-sm text-neutral-950 dark:text-white lg:mt-2">
+            <time datetime={FormatedProjectDate}>{FormatedProjectDate}</time>
           </p>
         </div>
       </div><div class="col-span-full lg:col-span-2 lg:max-w-2xl">
