@@ -4,10 +4,14 @@ import Button from "./Button.astro";
 const { projectTitle = "project title" } = Astro.props;
 const { projectIntro = "Integration with Western Union" } = Astro.props;
 const { imgSrc = "/WU-Dark.svg" } = Astro.props;
-const { technologies = "Integration, API, JSON" } = Astro.props;
+const { technologies = "Integration, API, JSON, XYZ" } = Astro.props;
 const {
-  description = "FamilyFund is a crowdfunding platform for friends and family Allowing users to take personal loans from their network without a traditional financial institution.",
+  description = "We developed is a crowdfunding platform for friends and family Allowing users to take personal loans from their network without a traditional financial institution. And this is the second part of the paragraph to give additional details about this project.",
 } = Astro.props;
+
+const { projectDate = "2023-01" } = Astro.props;
+
+const paragraphs = description.split(". ");
 ---
 
 <div style="opacity: 1; transform: none;">
@@ -41,7 +45,7 @@ const {
           >
             {technologies}
           </p><p class="text-sm text-neutral-950 dark:text-white lg:mt-2">
-            <time datetime="2023-01">January 2023</time>
+            <time datetime={projectDate}>{projectDate}</time>
           </p>
         </div>
       </div><div class="col-span-full lg:col-span-2 lg:max-w-2xl">
@@ -52,13 +56,7 @@ const {
         </p><div
           class="after:absolute after:bg-neutral-950/10 dark:before:bg-white/80 dark:after:bg-primary-gray-400/60 after:bottom-0 after:left-0 after:top-8 after:w-px before:absolute before:bg-neutral-950 before:h-6 before:left-0 before:top-0 before:w-px pl-5 relative mt-6 space-y-6 text-base text-neutral-600 dark:text-primary-gray-200"
         >
-          <p>
-            {description}
-          </p><p>
-            We developed a custom CMS to power their blog with and optimised
-            their site to rank higher for the keywords “Gary Vee” and “Tony
-            Robbins”.
-          </p>
+          {paragraphs.map((p) => <p>{p}</p>)}
         </div><div class="mt-8 flex">
           <a
             class="inline-flex rounded-full text-sm font-semibold transition bg-neutral-950 text-white"
