@@ -36,8 +36,19 @@ const FormatedProjectDate = new Date(projectDate).toLocaleString("en-US", {
             height="36"
             decoding="async"
             data-nimg="1"
-            class="h-10 w-20 flex-none"
+            class="h-10 w-20 flex-none hidden dark:flex"
             src={darkImgSrc}
+            style="color: transparent;"
+          />
+          <img
+            alt=""
+            loading="lazy"
+            width="36"
+            height="36"
+            decoding="async"
+            data-nimg="1"
+            class="h-10 w-20 flex-none dark:hidden"
+            src={lightImgSrc}
             style="color: transparent;"
           />
           <h3
