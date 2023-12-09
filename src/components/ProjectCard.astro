@@ -3,7 +3,8 @@ import Button from "./Button.astro";
 
 const { projectTitle = "project title" } = Astro.props;
 const { projectIntro = "Integration with Western Union" } = Astro.props;
-const { imgSrc = "/WU-Dark.svg" } = Astro.props;
+const { darkImgSrc = "/WU-Dark.svg" } = Astro.props;
+const { lightImgSrc = "/WU-Light.svg" } = Astro.props;
 const { technologies = "Integration, API, JSON, XYZ" } = Astro.props;
 const {
   description = "We developed is a crowdfunding platform for friends and family Allowing users to take personal loans from their network without a traditional financial institution. And this is the second part of the paragraph to give additional details about this project and part of the paragraph to give additional details about this project.",
@@ -36,7 +37,7 @@ const FormatedProjectDate = new Date(projectDate).toLocaleString("en-US", {
             decoding="async"
             data-nimg="1"
             class="h-10 w-20 flex-none"
-            src={imgSrc}
+            src={darkImgSrc}
             style="color: transparent;"
           />
           <h3
