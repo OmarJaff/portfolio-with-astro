@@ -1,6 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ProjectCard from "../components/ProjectCard.astro";
+import ProjectLayout from "../layouts/ProjectLayout.astro";
+const allProjects = await Astro.glob("../pages/projects/*.md");
 ---
 
 <Layout title="Omar's Portfolio">
@@ -59,7 +61,22 @@ import ProjectCard from "../components/ProjectCard.astro";
         </h2>
       </div>
       <div class="mt-10 space-y-20 sm:space-y-24 lg:space-y-32">
-        <ProjectCard />
+        {
+          allProjects.map((project) => (
+            <ProjectCard
+              url={project.url}
+              projectTitle={project.frontmatter.title}
+              projectIntro={project.frontmatter.projectIntro}
+              projectDate={project.frontmatter.projectDate}
+              description={project.frontmatter.description}
+              technologies={project.frontmatter.technologies}
+              imgSrc={project.frontmatter.image.url}
+              imgAlt={project.frontmatter.image.alt}
+              darkThemeImageSrc={project.frontmatter.darkThemeImage.url}
+              darkThemeImageAlt={project.frontmatter.darkThemeImage.alt}
+            />
+          ))
+        }
       </div>
     </section>
   </main>

@@ -6,7 +6,7 @@ const { frontmatter } = Astro.props;
 
 <Layout title={frontmatter.title}>
   <div class="px-4 sm:px-8 my-10 space-y-20 dark:text-white">
-    <h1>{frontmatter.title}</h1>
+    <h1>{frontmatter.projectIntro}</h1>
     <p>Written by {frontmatter.description}</p>
     <img
       class="dark:hidden"
