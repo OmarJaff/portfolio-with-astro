@@ -8,6 +8,16 @@ const { frontmatter } = Astro.props;
   <div class="px-4 sm:px-8 my-10 space-y-20 dark:text-white">
     <h1>{frontmatter.title}</h1>
     <p>Written by {frontmatter.description}</p>
+    <img
+      class="dark:hidden"
+      src={frontmatter.image.url}
+      alt={frontmatter.image.alt}
+    />
+    <img
+      class="hidden dark:flex"
+      src={frontmatter.darkThemeImage.url}
+      alt={frontmatter.darkThemeImage.alt}
+    />
     <slot />
   </div>
 </Layout>

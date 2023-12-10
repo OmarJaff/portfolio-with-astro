@@ -1,11 +1,15 @@
 ---
 layout: ../../Layouts/ProjectLayout.astro
 title: "Western Union Project"
+projectIntro: "Western Union and NassWallet API integration"
 pubDate: 2022-07-01
-description: "This is the first project of my new Astro blog. This is the first project of my new Astro blog."
+description: "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
 technologies: "API, Integration, Fintech"
 image:
-  url: "https://docs.astro.build/assets/full-logo-light.png"
-  alt: "The full Astro logo."
+  url: "../../../public/WU-Light.svg"
+  alt: "Western Union Logo"
+darkThemeImage:
+  url: "../../../public/WU-Dark.svg"
+  alt: "Western Union Logo"
 tags: ["astro", "blogging", "learning in public"]
 ---
