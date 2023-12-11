@@ -6,8 +6,8 @@ const allProjects = await Astro.glob("../pages/projects/*.md");
 ---
 
 <Layout title="Omar's Portfolio">
-  <main class="space-y-32">
-    <header class="px-4 sm:px-8 my-10 space-y-20">
+  <main class="space-y-32 mx-auto max-w-7xl px-4 lg:px-8">
+    <header class="my-10 space-y-20">
       <div class="space-y-6 lg:space-y-8 mt-12">
         <h1
           class="text-primary-black-base xl:w-3/4 dark:text-white font-semibold text-4xl md:text-7xl leading-snug"
@@ -52,7 +52,7 @@ const allProjects = await Astro.glob("../pages/projects/*.md");
       </div>
     </header>
 
-    <section id="projects" class="px-4 sm:px-8 mx-auto max-w-2xl lg:max-w-none">
+    <section id="projects" class="mx-auto max-w-2xl lg:max-w-none">
       <div style="opacity: 1; transform: none;">
         <h2
           class="font-display text-2xl font-semibold dark:text-white text-neutral-950"

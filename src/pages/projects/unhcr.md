@@ -12,4 +12,7 @@ darkThemeImage:
   url: "../../../public/WU-Dark.svg"
   alt: "Western Union Logo"
 tags: ["astro", "blogging", "learning in public"]
+category: "development"
+client: "NassWallet"
+service: "System integration"
 ---
