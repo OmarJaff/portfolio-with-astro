@@ -14,7 +14,7 @@ export default {
         "primary-black": "#0A0909",
         "primary-white": "#FAFAFA",
         "secondary-black": "#181818",
-        "primary-black-base": "#030303",
+        "primary-black-base": "#0a0a0a",
         "primary-black-800": "#151414",
         "primary-black-700": "#1F1E1E",
         "primary-gray-600": "#282828",
