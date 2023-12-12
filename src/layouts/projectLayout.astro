@@ -36,7 +36,7 @@ const FormatedProjectDate = new Date(frontmatter.projectDate).toLocaleString(
         </div>
       </div><div style="opacity: 1; transform: none;">
         <div
-          class="mt-24 border-t border-neutral-200 dark:border-neutral-700 bg-transparent sm:mt-32 lg:mt-40"
+          class="mt-24 border-t border-neutral-200 dark:border-neutral-800 bg-transparent sm:mt-32 lg:mt-40"
         >
           <div class="mx-auto max-w-7xl px-6 lg:px-8">
             <div class="mx-auto max-w-2xl lg:max-w-none">
@@ -45,13 +45,13 @@ const FormatedProjectDate = new Date(frontmatter.projectDate).toLocaleString(
                   class="-mx-6 grid grid-cols-1 text-sm text-neutral-950 dark:text-neutral-100 sm:mx-0 sm:grid-cols-3"
                 >
                   <div
-                    class="border-t border-neutral-200 dark:border-neutral-700 px-6 py-4 first:border-t-0 sm:border-l sm:border-t-0"
+                    class="border-t border-neutral-200 dark:border-neutral-800 px-6 py-4 first:border-t-0 sm:border-l sm:border-t-0"
                   >
                     <dt class="font-semibold dark:font-bold">Client</dt><dd>
                       {frontmatter.client}
                     </dd>
                   </div><div
-                    class="border-t border-neutral-200 dark:border-neutral-700 px-6 py-4 first:border-t-0 sm:border-l sm:border-t-0"
+                    class="border-t border-neutral-200 dark:border-neutral-800 px-6 py-4 first:border-t-0 sm:border-l sm:border-t-0"
                   >
                     <dt class="font-semibold dark:font-bold">Year</dt><dd>
                       <time datetime={FormatedProjectDate}
@@ -59,9 +59,11 @@ const FormatedProjectDate = new Date(frontmatter.projectDate).toLocaleString(
                       >
                     </dd>
                   </div><div
-                    class="border-t border-neutral-200 dark:border-neutral-700 px-6 py-4 first:border-t-0 sm:border-l sm:border-t-0"
+                    class="border-t border-neutral-200 dark:border-neutral-800 px-6 py-4 first:border-t-0 sm:border-l sm:border-t-0"
                   >
-                    <dt class="font-semibold dark:font-bold">Service</dt><dd>
+                    <dt class="font-semibold dark:font-bold">Service</dt><dd
+                      class="dark:"
+                    >
                       {frontmatter.service}
                     </dd>
                   </div>
@@ -69,8 +71,12 @@ const FormatedProjectDate = new Date(frontmatter.projectDate).toLocaleString(
               </div>
             </div>
           </div>
-        </div><div class="border-y border-neutral-200 bg-neutral-100">
-          <div class="-my-px mx-auto max-w-[76rem] bg-neutral-200">
+        </div><div
+          class="border-y border-neutral-200 bg-neutral-100 dark:bg-neutral-900/80 dark:border-neutral-800"
+        >
+          <div
+            class="-my-px mx-auto max-w-[76rem] bg-neutral-200 dark:bg-neutral-800"
+          >
             <div class="group relative">
               <img
                 alt=""
@@ -82,7 +88,7 @@ const FormatedProjectDate = new Date(frontmatter.projectDate).toLocaleString(
                 class="w-full"
                 sizes="(min-width: 1216px) 76rem, 100vw"
                 srcset="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero.5a19c176.jpg&w=640&q=90 640w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero.5a19c176.jpg&w=750&q=90 750w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero.5a19c176.jpg&w=828&q=90 828w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero.5a19c176.jpg&w=1080&q=90 1080w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero.5a19c176.jpg&w=1200&q=90 1200w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero.5a19c176.jpg&w=1920&q=90 1920w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero.5a19c176.jpg&w=2048&q=90 2048w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero.5a19c176.jpg&w=3840&q=90 3840w"
-                src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero.5a19c176.jpg&w=3840&q=90"
+                src="https://studio.tailwindui.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero.814cd572.jpg&w=2048&q=90"
                 style="color: transparent; filter: grayscale(0.390652);"
               /><div
                 class="pointer-events-none absolute left-0 top-0 w-full opacity-0 transition duration-300 group-hover:opacity-100"
@@ -98,7 +104,7 @@ const FormatedProjectDate = new Date(frontmatter.projectDate).toLocaleString(
                   class="w-full"
                   sizes="(min-width: 1216px) 76rem, 100vw"
                   srcset="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero.5a19c176.jpg&w=640&q=90 640w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero.5a19c176.jpg&w=750&q=90 750w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero.5a19c176.jpg&w=828&q=90 828w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero.5a19c176.jpg&w=1080&q=90 1080w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero.5a19c176.jpg&w=1200&q=90 1200w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero.5a19c176.jpg&w=1920&q=90 1920w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero.5a19c176.jpg&w=2048&q=90 2048w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero.5a19c176.jpg&w=3840&q=90 3840w"
-                  src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero.5a19c176.jpg&w=3840&q=90"
+                  src="https://studio.tailwindui.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero.814cd572.jpg&w=2048&q=90"
                   style="color: transparent;"
                 />
               </div>
