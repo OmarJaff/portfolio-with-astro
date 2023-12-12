@@ -2,6 +2,13 @@
 import Layout from "../layouts/Layout.astro";
 
 const { frontmatter } = Astro.props;
+
+const FormatedProjectDate = new Date(frontmatter.projectDate).toLocaleString(
+  "en-US",
+  {
+    year: "numeric",
+  }
+);
 ---
 
 <Layout title={frontmatter.title}>
@@ -12,14 +19,14 @@ const { frontmatter } = Astro.props;
           <div style="opacity: 1; transform: none;">
             <h1>
               <span
-                class="block font-display text-base font-semibold dark:text-primary-gray-100 text-neutral-950 capitalize"
+                class="block font-display text-base font-semibold dark:text-neutral-200 text-neutral-950 capitalize"
                 >{frontmatter.category} Project</span
               ><span class="sr-only"> -</span><span
-                class="mt-6 block max-w-5xl font-display text-5xl font-medium tracking-tight text-neutral-950 dark:text-white [text-wrap:balance] sm:text-6xl mx-auto"
+                class="mt-6 block max-w-5xl font-display text-5xl font-medium tracking-tight text-neutral-950 dark:text-neutral-100 [text-wrap:balance] sm:text-6xl mx-auto"
                 >{frontmatter.title}</span
               >
             </h1><div
-              class="mt-6 max-w-3xl text-xl text-neutral-600 dark:text-primary-gray-300 mx-auto"
+              class="mt-6 max-w-3xl text-xl text-neutral-600 dark:text-neutral-400 mx-auto"
             >
               <p>
                 {frontmatter.description}
@@ -29,30 +36,32 @@ const { frontmatter } = Astro.props;
         </div>
       </div><div style="opacity: 1; transform: none;">
         <div
-          class="mt-24 border-t border-neutral-200 bg-transparent sm:mt-32 lg:mt-40"
+          class="mt-24 border-t border-neutral-200 dark:border-neutral-700 bg-transparent sm:mt-32 lg:mt-40"
         >
           <div class="mx-auto max-w-7xl px-6 lg:px-8">
             <div class="mx-auto max-w-2xl lg:max-w-none">
               <div class="mx-auto max-w-5xl">
                 <dl
-                  class="-mx-6 grid grid-cols-1 text-sm text-neutral-950 sm:mx-0 sm:grid-cols-3"
+                  class="-mx-6 grid grid-cols-1 text-sm text-neutral-950 dark:text-neutral-100 sm:mx-0 sm:grid-cols-3"
                 >
                   <div
-                    class="border-t border-neutral-200 px-6 py-4 first:border-t-0 sm:border-l sm:border-t-0"
+                    class="border-t border-neutral-200 dark:border-neutral-700 px-6 py-4 first:border-t-0 sm:border-l sm:border-t-0"
                   >
-                    <dt class="font-semibold">Client</dt><dd>
+                    <dt class="font-semibold dark:font-bold">Client</dt><dd>
                       {frontmatter.client}
                     </dd>
                   </div><div
-                    class="border-t border-neutral-200 px-6 py-4 first:border-t-0 sm:border-l sm:border-t-0"
+                    class="border-t border-neutral-200 dark:border-neutral-700 px-6 py-4 first:border-t-0 sm:border-l sm:border-t-0"
                   >
-                    <dt class="font-semibold">Year</dt><dd>
-                      <time datetime="2022">2022</time>
+                    <dt class="font-semibold dark:font-bold">Year</dt><dd>
+                      <time datetime={FormatedProjectDate}
+                        >{FormatedProjectDate}</time
+                      >
                     </dd>
                   </div><div
-                    class="border-t border-neutral-200 px-6 py-4 first:border-t-0 sm:border-l sm:border-t-0"
+                    class="border-t border-neutral-200 dark:border-neutral-700 px-6 py-4 first:border-t-0 sm:border-l sm:border-t-0"
                   >
-                    <dt class="font-semibold">Service</dt><dd>
+                    <dt class="font-semibold dark:font-bold">Service</dt><dd>
                       {frontmatter.service}
                     </dd>
                   </div>
