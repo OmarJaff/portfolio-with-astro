@@ -11,6 +11,13 @@ const FormatedProjectDate = new Date(frontmatter.projectDate).toLocaleString(
 );
 ---
 
+<script>
+  import { animate, scroll } from "motion";
+  scroll(animate("#myimage", { opacity: [0, 1, 1, 0] }), {
+    offset: ["start end", "end end", "start start", "end start"],
+  });
+</script>
+
 <Layout title={frontmatter.title}>
   <div class="space-y-20 dark:text-white">
     <header>
@@ -79,6 +86,7 @@ const FormatedProjectDate = new Date(frontmatter.projectDate).toLocaleString(
           >
             <div class="group relative">
               <img
+                id="myimage"
                 alt=""
                 fetchpriority="high"
                 width="3648"
@@ -87,9 +95,7 @@ const FormatedProjectDate = new Date(frontmatter.projectDate).toLocaleString(
                 data-nimg="1"
                 class="w-full"
                 sizes="(min-width: 1216px) 76rem, 100vw"
-                srcset="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero.5a19c176.jpg&w=640&q=90 640w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero.5a19c176.jpg&w=750&q=90 750w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero.5a19c176.jpg&w=828&q=90 828w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero.5a19c176.jpg&w=1080&q=90 1080w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero.5a19c176.jpg&w=1200&q=90 1200w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero.5a19c176.jpg&w=1920&q=90 1920w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero.5a19c176.jpg&w=2048&q=90 2048w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero.5a19c176.jpg&w=3840&q=90 3840w"
                 src="https://studio.tailwindui.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero.814cd572.jpg&w=2048&q=90"
-                style="color: transparent; filter: grayscale(0.390652);"
               /><div
                 class="pointer-events-none absolute left-0 top-0 w-full opacity-0 transition duration-300 group-hover:opacity-100"
                 aria-hidden="true"
@@ -102,10 +108,7 @@ const FormatedProjectDate = new Date(frontmatter.projectDate).toLocaleString(
                   decoding="async"
                   data-nimg="1"
                   class="w-full"
-                  sizes="(min-width: 1216px) 76rem, 100vw"
-                  srcset="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero.5a19c176.jpg&w=640&q=90 640w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero.5a19c176.jpg&w=750&q=90 750w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero.5a19c176.jpg&w=828&q=90 828w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero.5a19c176.jpg&w=1080&q=90 1080w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero.5a19c176.jpg&w=1200&q=90 1200w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero.5a19c176.jpg&w=1920&q=90 1920w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero.5a19c176.jpg&w=2048&q=90 2048w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero.5a19c176.jpg&w=3840&q=90 3840w"
                   src="https://studio.tailwindui.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero.814cd572.jpg&w=2048&q=90"
-                  style="color: transparent;"
                 />
               </div>
             </div>
@@ -114,16 +117,64 @@ const FormatedProjectDate = new Date(frontmatter.projectDate).toLocaleString(
       </div>
     </header>
 
-    <img
-      class="dark:hidden"
-      src={frontmatter.image.url}
-      alt={frontmatter.image.alt}
-    />
-    <img
-      class="hidden dark:flex"
-      src={frontmatter.darkThemeImage.url}
-      alt={frontmatter.darkThemeImage.alt}
-    />
-    <slot />
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 mt-24 sm:mt-32 lg:mt-40">
+      <div class="mx-auto max-w-2xl lg:max-w-none">
+        <div style="opacity: 1; transform: none;">
+          <div
+            class="[&>*]:mx-auto [&>*]:max-w-3xl [&>:first-child]:!mt-0 [&>:last-child]:!mb-0"
+          >
+            <div class="typography">
+              <h2>Overview</h2>
+              <p>
+                Having written one of the most shared posts on medium.com (“<em
+                  >How to cash out your Dad’s 401K without him knowing</em
+                >”) FamilyFund approached us looking to build out their own
+                blog.
+              </p>
+              <p>
+                The blog would help drive new traffic to their site and serve as
+                a resource-hub for users already trying to exploit their network
+                for money. Because it was so important that they own their own
+                content, we decided that an on-prem solution would be best.
+              </p>
+              <p>
+                We installed 24 Mac Minis bought from craigslist in the storage
+                cupboard of their office. One machine would be used for the web
+                server and another one for the build server. The other 22 were
+                for redundancy, and to DDOS squarespace.com every few months to
+                keep them on their toes.
+              </p>
+              <p>
+                To optimise their search traffic we used an innovative
+                technique. Every post has a shadow post only visible to web
+                crawlers that is some variation of <em
+                  >“Gary Vee is looking to invest in new founders”</em
+                >. Like bees to honey.
+              </p>
+              <h2>What we did</h2>
+            </div><ul role="list" class="my-6 flex flex-wrap gap-4">
+              <li
+                class="rounded-full bg-neutral-100 px-4 py-1.5 text-base text-neutral-600"
+              >
+                Frontend (Next.js)
+              </li><li
+                class="rounded-full bg-neutral-100 px-4 py-1.5 text-base text-neutral-600"
+              >
+                Custom CMS
+              </li><li
+                class="rounded-full bg-neutral-100 px-4 py-1.5 text-base text-neutral-600"
+              >
+                SEO
+              </li><li
+                class="rounded-full bg-neutral-100 px-4 py-1.5 text-base text-neutral-600"
+              >
+                Infrastructure
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <slot />
+    </div>
   </div>
 </Layout>
