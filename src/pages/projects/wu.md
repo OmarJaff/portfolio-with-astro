@@ -2,6 +2,7 @@
 layout: ../../Layouts/ProjectLayout.astro
 title: "Western Union Project"
 projectIntro: "Western Union and NassWallet API integration"
+isFeatured: true
 projectDate: 2023-07-01
 description: "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
 
