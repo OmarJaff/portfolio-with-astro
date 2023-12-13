@@ -15,20 +15,26 @@ const FormatedProjectDate = new Date(frontmatter.projectDate).toLocaleString(
   import { animate, scroll } from "motion";
   const rootElement = document.getElementById("rootElement");
 
-  const scrollOptions = {
-    target: rootElement,
-    offset: ["start end", "end end"],
-  };
-
   scroll(
-    animate("img", {
-      filter: [
-        "grayscale(100%)",
-        "grayscale(0%)",
-        "grayscale(0%)",
-        "grayscale(100%)",
-      ],
-    })
+    animate(
+      "img",
+      {
+        filter: [
+          "grayscale(100%)",
+          "grayscale(100%)",
+          "grayscale(0%)",
+          "grayscale(0%)",
+          "grayscale(100%)",
+          "grayscale(100%)",
+        ],
+      },
+      {
+        easing: ["ease-in", "linear", "ease-out"],
+      }
+    ),
+    {
+      offset: ["start start", "end end"],
+    }
   );
 </script>
 
@@ -36,7 +42,7 @@ const FormatedProjectDate = new Date(frontmatter.projectDate).toLocaleString(
   <div class="space-y-20 dark:text-white">
     <header>
       <div class="mx-auto max-w-7xl px-6 lg:px-8 lg:mt-28 text-center">
-        <div id="rootElement" class="mx-auto max-w-2xl lg:max-w-none">
+        <div class="mx-auto max-w-2xl lg:max-w-none">
           <div>
             <h1>
               <span
