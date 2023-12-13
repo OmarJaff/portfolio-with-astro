@@ -11,8 +11,8 @@ const FormatedProjectDate = new Date(frontmatter.projectDate).toLocaleString(
 );
 ---
 
-<script>
-  import { animate, scroll } from "motion";
+<script type="module" is:inline>
+  import { animate, scroll } from "../../node_modules/motion";
   const rootElement = document.getElementById("rootElement");
 
   scroll(
