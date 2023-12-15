@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ProjectCard from "../components/ProjectCard.astro";
+import WorkPanel from "../components/WorkPanel.astro";
 const allProjects = await Astro.glob("../pages/projects/*.md");
 const experiences = [
   {
@@ -17,6 +18,23 @@ const experiences = [
     title: "Clouding",
     description:
       "We specialise in crafting beautiful, high quality marketing pages. The rest of the website will be a shell that uses lorem ipsum everywhere.",
+  },
+];
+
+const works = [
+  {
+    company: "Free Lancing",
+    logoURL: "../../public/freelancing.svg",
+    role: "Web Developer",
+    from: "2019",
+    to: "Present",
+  },
+  {
+    company: "NassWallet",
+    logoURL: "../../public/nw-logo.svg",
+    role: "Senior Product Engineer",
+    from: "2020",
+    to: "2023",
   },
 ];
 ---
@@ -195,6 +213,8 @@ const experiences = [
 
     <!-- Work Experiance and CV -->
 
-    <section></section>
+    <section>
+      <WorkPanel works={works} />
+    </section>
   </main>
 </Layout>
