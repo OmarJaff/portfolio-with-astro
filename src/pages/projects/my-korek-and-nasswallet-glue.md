@@ -2,7 +2,7 @@
 layout: ../../Layouts/ProjectLayout.astro
 title: "My Korek and NassWallet Glue"
 projectIntro: "the fee and cost estimator"
-isFeatured: false
+isFeatured: true
 projectDate: 2022-07-01
 description: "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
 technologies: "API, Integration, Fintech"

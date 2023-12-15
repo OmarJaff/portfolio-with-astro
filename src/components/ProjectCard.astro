@@ -3,7 +3,7 @@ const {
   projectIntro = "Integration with Western Union",
   darkThemeImageSrc = "/WU-Dark.svg",
   darkThemeImageAlt = "image detail",
-  projectTitle = "project title",
+  category = "Integration",
   imgSrc = "/WU-Light.svg",
   imgAlt = "image detail",
   projectDate = "2023-02",
@@ -19,7 +19,7 @@ const FormatedProjectDate = new Date(projectDate).toLocaleString("en-US", {
 
 <div class="flex">
   <article
-    class="relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 sm:p-8"
+    class="relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 dark:ring-neutral-200/10 transition hover:bg-neutral-100 dark:hover:bg-neutral-900 sm:p-8"
   >
     <h3>
       <a href={url}
@@ -47,15 +47,19 @@ const FormatedProjectDate = new Date(projectDate).toLocaleString("en-US", {
           style="color: transparent;"
         />
       </a>
-    </h3><p class="mt-6 flex gap-x-2 text-sm text-neutral-950">
+    </h3><p
+      class="mt-6 flex gap-x-2 text-sm text-neutral-950 dark:text-neutral-100"
+    >
       <time datetime={FormatedProjectDate} class="font-semibold"
         >{FormatedProjectDate}</time
-      ><span class="text-neutral-300" aria-hidden="true">/</span><span
-        >{projectTitle}</span
-      >
-    </p><p class="mt-6 font-display text-2xl font-semibold text-neutral-950">
+      ><span class="text-neutral-300 dark:text-neutral-400" aria-hidden="true"
+        >/</span
+      ><span>{category}</span>
+    </p><p
+      class="mt-6 font-display text-2xl font-semibold text-neutral-950 dark:text-neutral-100"
+    >
       {projectIntro}
-    </p><p class="mt-4 text-base text-neutral-600">
+    </p><p class="mt-4 text-base text-neutral-600 dark:text-neutral-400">
       {description}
     </p>
   </article>
