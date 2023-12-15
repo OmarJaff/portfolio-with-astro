@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import ProjectCard from "../components/Project.astro";
+import ProjectCard from "../components/ProjectCard.astro";
 import ProjectLayout from "../layouts/ProjectLayout.astro";
 const allProjects = await Astro.glob("../pages/projects/*.md");
 const experiences = [
@@ -77,7 +77,13 @@ const experiences = [
           Projects
         </h2>
       </div>
-
+      <div class="mx-auto max-w-7xl px-6 lg:px-8 mt-16">
+        <div class="mx-auto max-w-2xl lg:max-w-none">
+          <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+            <div class="flex"></div>
+          </div>
+        </div>
+      </div>
       <!-- old section -->
 
       <!-- <div class="mt-10 space-y-8 sm:space-y-10 lg:space-y-12">

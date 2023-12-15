@@ -1,3 +1,60 @@
 ---
+const {
+  projectIntro = "Integration with Western Union",
+  darkThemeImageSrc = "/WU-Dark.svg",
+  darkThemeImageAlt = "image detail",
+  projectTitle = "project title",
+  imgSrc = "/WU-Light.svg",
+  imgAlt = "image detail",
+  projectDate = "2023-02",
+  description = "We developed is a crowdfunding platform for friends and family Allowing users to take personal loans from their network without a traditional financial institution. And this is the second part of the paragraph to give additional details about this project and part of the paragraph to give additional details about this project.",
+  url = "/",
+} = Astro.props;
 
+const FormatedProjectDate = new Date(projectDate).toLocaleString("en-US", {
+  month: "long",
+  year: "numeric",
+});
 ---
+
+<article
+  class="relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 sm:p-8"
+>
+  <h3>
+    <a href={url}
+      ><span class="absolute inset-0 rounded-3xl"></span>
+      <img
+        alt={darkThemeImageAlt}
+        loading="lazy"
+        width="36"
+        height="36"
+        decoding="async"
+        data-nimg="1"
+        class="h-16 w-16 hidden dark:flex"
+        src={darkThemeImageSrc}
+        style="color: transparent;"
+      />
+      <img
+        alt={imgAlt}
+        loading="lazy"
+        width="36"
+        height="36"
+        decoding="async"
+        data-nimg="1"
+        class="h-16 w-16 dark:hidden"
+        src={imgSrc}
+        style="color: transparent;"
+      />
+    </a>
+  </h3><p class="mt-6 flex gap-x-2 text-sm text-neutral-950">
+    <time datetime={FormatedProjectDate} class="font-semibold"
+      >{FormatedProjectDate}</time
+    ><span class="text-neutral-300" aria-hidden="true">/</span><span
+      >{projectTitle}</span
+    >
+  </p><p class="mt-6 font-display text-2xl font-semibold text-neutral-950">
+    {projectIntro}
+  </p><p class="mt-4 text-base text-neutral-600">
+    {description}
+  </p>
+</article>
