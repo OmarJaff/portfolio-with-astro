@@ -22,77 +22,75 @@ const FormatedProjectDate = new Date(projectDate).toLocaleString("en-US", {
 });
 ---
 
-<div style="opacity: 1; transform: none;">
-  <article>
+<article>
+  <div
+    class="grid grid-cols-3 gap-x-8 gap-y-8 pt-16 relative before:absolute after:absolute before:bg-neutral-950 after:bg-neutral-950/10 dark:before:bg-white/80 dark:after:bg-primary-gray-400/60 before:left-0 before:top-0 before:h-px before:w-6 after:left-8 after:right-0 after:top-0 after:h-px"
+  >
     <div
-      class="grid grid-cols-3 gap-x-8 gap-y-8 pt-16 relative before:absolute after:absolute before:bg-neutral-950 after:bg-neutral-950/10 dark:before:bg-white/80 dark:after:bg-primary-gray-400/60 before:left-0 before:top-0 before:h-px before:w-6 after:left-8 after:right-0 after:top-0 after:h-px"
+      class="col-span-full sm:flex sm:items-center sm:justify-between sm:gap-x-8 lg:col-span-1 lg:block"
     >
-      <div
-        class="col-span-full sm:flex sm:items-center sm:justify-between sm:gap-x-8 lg:col-span-1 lg:block"
+      <div class="sm:flex sm:items-center sm:gap-x-6 lg:block">
+        <img
+          alt={darkThemeImageAlt}
+          loading="lazy"
+          width="36"
+          height="36"
+          decoding="async"
+          data-nimg="1"
+          class="h-10 w-20 flex-none hidden dark:flex"
+          src={darkThemeImageSrc}
+          style="color: transparent;"
+        />
+        <img
+          alt={imgAlt}
+          loading="lazy"
+          width="36"
+          height="36"
+          decoding="async"
+          data-nimg="1"
+          class="h-10 w-20 flex-none dark:hidden"
+          src={imgSrc}
+          style="color: transparent;"
+        />
+        <h3
+          class="mt-6 text-sm font-bold dark:text-neutral-200 text-neutral-950 sm:mt-0 lg:mt-8 capitalize"
+        >
+          {projectTitle}
+        </h3>
+      </div><div
+        x-data="{ date: '2023-12-07T17:04:28Z', formatDate(date) { return new Date(date).toLocaleString('en-US', { month: 'long', year: 'numeric' }); } }"
+        class="mt-1 flex gap-x-4 sm:mt-0 lg:block"
       >
-        <div class="sm:flex sm:items-center sm:gap-x-6 lg:block">
-          <img
-            alt={darkThemeImageAlt}
-            loading="lazy"
-            width="36"
-            height="36"
-            decoding="async"
-            data-nimg="1"
-            class="h-10 w-20 flex-none hidden dark:flex"
-            src={darkThemeImageSrc}
-            style="color: transparent;"
-          />
-          <img
-            alt={imgAlt}
-            loading="lazy"
-            width="36"
-            height="36"
-            decoding="async"
-            data-nimg="1"
-            class="h-10 w-20 flex-none dark:hidden"
-            src={imgSrc}
-            style="color: transparent;"
-          />
-          <h3
-            class="mt-6 text-sm font-bold dark:text-neutral-100 text-neutral-950 sm:mt-0 lg:mt-8 capitalize"
-          >
-            {projectTitle}
-          </h3>
-        </div><div
-          x-data="{ date: '2023-12-07T17:04:28Z', formatDate(date) { return new Date(date).toLocaleString('en-US', { month: 'long', year: 'numeric' }); } }"
-          class="mt-1 flex gap-x-4 sm:mt-0 lg:block"
-        >
-          <p
-            class="text-sm tracking-tight text-neutral-950 dark:text-neutral-100 after:ml-4 after:font-semibold after:text-primary-gray-100 after:content-['/'] lg:mt-2 lg:after:hidden"
-          >
-            {technologies}
-          </p>
-          <p class="text-sm text-neutral-950 dark:text-neutral-400 lg:mt-2">
-            <time datetime={FormatedProjectDate}>{FormatedProjectDate}</time>
-          </p>
-        </div>
-      </div><div class="col-span-full lg:col-span-2 lg:max-w-2xl">
         <p
-          class="font-display text-4xl font-medium text-neutral-950 dark:text-white"
+          class="text-sm tracking-tight text-neutral-950 dark:text-neutral-400 after:ml-4 after:font-semibold after:text-primary-gray-100 dark:after:text-neutral-800 after:content-['/'] lg:mt-2 lg:after:hidden"
         >
-          <a href={url}>{projectIntro}</a>
-        </p><div
-          class="after:absolute after:bg-neutral-950/10 dark:before:bg-white/80 dark:after:bg-primary-gray-400/60 after:bottom-0 after:left-0 after:top-8 after:w-px before:absolute before:bg-neutral-950 before:h-6 before:left-0 before:top-0 before:w-px pl-5 relative mt-6 space-y-6 text-base text-neutral-600 dark:text-primary-gray-200"
+          {technologies}
+        </p>
+        <p class="text-sm text-neutral-950 dark:text-neutral-400 lg:mt-2">
+          <time datetime={FormatedProjectDate}>{FormatedProjectDate}</time>
+        </p>
+      </div>
+    </div><div class="col-span-full lg:col-span-2 lg:max-w-2xl">
+      <p
+        class="font-display text-4xl font-medium text-neutral-950 dark:text-neutral-100"
+      >
+        <a href={url}>{projectIntro}</a>
+      </p><div
+        class="after:absolute after:bg-neutral-950/10 dark:before:bg-white/80 dark:after:bg-primary-gray-400/60 after:bottom-0 after:left-0 after:top-8 after:w-px before:absolute before:bg-neutral-950 before:h-6 before:left-0 before:top-0 before:w-px pl-5 relative mt-6 space-y-6 text-base text-neutral-600 dark:text-primary-gray-200"
+      >
+        {paragraphs.map((p) => <p>{p}</p>)}
+      </div><div class="mt-8 flex">
+        <a
+          class="inline-flex rounded-full text-sm font-semibold transition bg-neutral-950 text-neutral-100"
+          aria-label="Read case study: FamilyFund"
+          href={url}
         >
-          {paragraphs.map((p) => <p>{p}</p>)}
-        </div><div class="mt-8 flex">
-          <a
-            class="inline-flex rounded-full text-sm font-semibold transition bg-neutral-950 text-white"
-            aria-label="Read case study: FamilyFund"
-            href={url}
-          >
-            <Button
-              title="Read More"
-              class="hover:text-primary-gray-200 transition duration-100 relative top-px bg-primary-black-base dark:bg-secondary-black flex items-center lg:px-6 px-4 py-3 rounded-full text-white"
-            />
-          </a>
-        </div>
+          <Button
+            title="Read More"
+            class="hover:text-primary-gray-200 transition duration-100 relative top-px bg-primary-black-base dark:bg-secondary-black flex items-center lg:px-6 px-4 py-3 rounded-full text-white"
+          />
+        </a>
       </div>
     </div>
-  </article>
-</div>
+  </div>
+</article>

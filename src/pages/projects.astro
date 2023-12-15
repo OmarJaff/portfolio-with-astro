@@ -1,0 +1,48 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+const allProjects = await Astro.glob("../pages/projects/*.md");
+---
+
+<Layout title="Projects">
+  <div class="mt-12 px-4 sm:px-8 mx-auto max-w-7xl space-y-28">
+    <div class="mx-auto max-w-2xl lg:max-w-none">
+      <div class="max-w-2xl" style="opacity: 1; transform: none;">
+        <h2>
+          <span class="sr-only"> -</span><span
+            class="block font-display tracking-tight [text-wrap:balance] text-4xl font-semibold text-neutral-950 dark:text-neutral-100"
+            >My Projects</span
+          >
+        </h2><div
+          class="mt-6 text-base sm:text-lg text-neutral-600 dark:text-neutral-400"
+        >
+          <p>
+            Dive into my digital playground! Here, you'll find a mix of cool
+            stuff I've been up to. From whipping up user-friendly experiences to
+            tackling tricky tech challenges, these projects are like my digital
+            adventures.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="space-y-16 lg:space-y-42">
+      {
+        allProjects.flatMap((project) => (
+          <ProjectCard
+            url={project.url}
+            projectTitle={project.frontmatter.title}
+            projectIntro={project.frontmatter.projectIntro}
+            projectDate={project.frontmatter.projectDate}
+            description={project.frontmatter.description}
+            technologies={project.frontmatter.technologies}
+            imgSrc={project.frontmatter.image.url}
+            imgAlt={project.frontmatter.image.alt}
+            darkThemeImageSrc={project.frontmatter.darkThemeImage.url}
+            darkThemeImageAlt={project.frontmatter.darkThemeImage.alt}
+          />
+        ))
+      }
+    </div>
+  </div>
+</Layout>
