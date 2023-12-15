@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import ProjectCard from "../components/ProjectCard.astro";
+import Project from "../components/Project.astro";
 const allProjects = await Astro.glob("../pages/projects/*.md");
 ---
 
@@ -29,7 +29,7 @@ const allProjects = await Astro.glob("../pages/projects/*.md");
     <div class="space-y-16 lg:space-y-42">
       {
         allProjects.flatMap((project) => (
-          <ProjectCard
+          <Project
             url={project.url}
             projectTitle={project.frontmatter.title}
             projectIntro={project.frontmatter.projectIntro}

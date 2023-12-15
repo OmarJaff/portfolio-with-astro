@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import ProjectCard from "../components/ProjectCard.astro";
+import ProjectCard from "../components/Project.astro";
 import ProjectLayout from "../layouts/ProjectLayout.astro";
 const allProjects = await Astro.glob("../pages/projects/*.md");
 const experiences = [
@@ -77,7 +77,10 @@ const experiences = [
           Projects
         </h2>
       </div>
-      <div class="mt-10 space-y-8 sm:space-y-10 lg:space-y-12">
+
+      <!-- old section -->
+
+      <!-- <div class="mt-10 space-y-8 sm:space-y-10 lg:space-y-12">
         {
           allProjects.flatMap((project) =>
             project.frontmatter.isFeatured ? (
@@ -98,7 +101,7 @@ const experiences = [
             )
           )
         }
-      </div>
+      </div> -->
     </section>
 
     <section class="mx-auto max-w-7xl mt-24 sm:mt-32 lg:mt-40">
@@ -143,7 +146,7 @@ const experiences = [
                             class="w-full bg-neutral-100 object-cover"
                             style="color:transparent;aspect-ratio:655 / 680"
                             sizes="(min-width: 1024px) 41rem, 31rem"
-                            src="https://images.unsplash.com/photo-1628258334105-2a0b3d6efee1?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            src="../../public/dev-photo.avif"
                           /></foreignObject
                         ></g
                       ><use
