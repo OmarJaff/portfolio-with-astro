@@ -1,7 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ProjectCard from "../components/ProjectCard.astro";
-import ProjectLayout from "../layouts/ProjectLayout.astro";
 const allProjects = await Astro.glob("../pages/projects/*.md");
 const experiences = [
   {
@@ -23,7 +22,7 @@ const experiences = [
 ---
 
 <Layout title="Omar's Portfolio">
-  <main class="space-y-32 mx-auto max-w-7xl px-4 lg:px-8">
+  <main class="space-y-32 mx-auto max-w-7xl px-6 lg:px-10">
     <header class="my-10 space-y-20">
       <div class="space-y-6 lg:space-y-8 mt-12">
         <h1
@@ -77,37 +76,32 @@ const experiences = [
           Projects
         </h2>
       </div>
-      <div class="mx-auto max-w-7xl px-6 lg:px-8 mt-16">
+      <div class="mx-auto max-w-7xl mt-16">
         <div class="mx-auto max-w-2xl lg:max-w-none">
           <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
-            <div class="flex"></div>
+            {
+              allProjects.flatMap((project) =>
+                project.frontmatter.isFeatured ? (
+                  <ProjectCard
+                    url={project.url}
+                    projectTitle={project.frontmatter.title}
+                    projectIntro={project.frontmatter.projectIntro}
+                    projectDate={project.frontmatter.projectDate}
+                    description={project.frontmatter.description}
+                    technologies={project.frontmatter.technologies}
+                    imgSrc={project.frontmatter.image.url}
+                    imgAlt={project.frontmatter.image.alt}
+                    darkThemeImageSrc={project.frontmatter.darkThemeImage.url}
+                    darkThemeImageAlt={project.frontmatter.darkThemeImage.alt}
+                  />
+                ) : (
+                  []
+                )
+              )
+            }
           </div>
         </div>
       </div>
-      <!-- old section -->
-
-      <!-- <div class="mt-10 space-y-8 sm:space-y-10 lg:space-y-12">
-        {
-          allProjects.flatMap((project) =>
-            project.frontmatter.isFeatured ? (
-              <ProjectCard
-                url={project.url}
-                projectTitle={project.frontmatter.title}
-                projectIntro={project.frontmatter.projectIntro}
-                projectDate={project.frontmatter.projectDate}
-                description={project.frontmatter.description}
-                technologies={project.frontmatter.technologies}
-                imgSrc={project.frontmatter.image.url}
-                imgAlt={project.frontmatter.image.alt}
-                darkThemeImageSrc={project.frontmatter.darkThemeImage.url}
-                darkThemeImageAlt={project.frontmatter.darkThemeImage.alt}
-              />
-            ) : (
-              []
-            )
-          )
-        }
-      </div> -->
     </section>
 
     <section class="mx-auto max-w-7xl mt-24 sm:mt-32 lg:mt-40">
