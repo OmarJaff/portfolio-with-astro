@@ -96,7 +96,7 @@ const works = [
         </h2>
       </div>
       <div class="mx-auto max-w-7xl mt-16">
-        <div class="mx-auto max-w-2xl lg:max-w-none">
+        <div class="mx-auto max-w-2xl lg:max-w-none space-y-6">
           <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
             {
               allProjects.flatMap((project) =>
@@ -118,6 +118,25 @@ const works = [
                 )
               )
             }
+          </div>
+          <div>
+            <a
+              href="/projects"
+              class="text-neutral-950 dark:text-neutral-300 flex gap-x-2 items-center w-full justify-end underline-offset-4 underline"
+              >View all projects
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                data-slot="icon"
+                class="w-5 h-5 dark:text-neutral-300"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M2 10a.75.75 0 0 1 .75-.75h12.59l-2.1-1.95a.75.75 0 1 1 1.02-1.1l3.5 3.25a.75.75 0 0 1 0 1.1l-3.5 3.25a.75.75 0 1 1-1.02-1.1l2.1-1.95H2.75A.75.75 0 0 1 2 10Z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </a>
           </div>
         </div>
       </div>
