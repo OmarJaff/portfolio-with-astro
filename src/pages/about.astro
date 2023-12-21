@@ -7,29 +7,33 @@ const aboutMeParagraphs = aboutme.split(". ");
 ---
 
 <Layout title="About Me">
-  <div class="mx-auto max-w-7xl px-6 lg:px-8 mt-12">
+  <div class="mx-auto max-w-5xl px-6 lg:px-8 mt-12">
     <header class="relative space-y-8">
       <div
-        class="flex w-full dark:text-neutral-100 text-neutral-950 text-5xl sm:text-9xl font-bold leading-none"
+        class="flex w-full dark:text-neutral-100 text-neutral-950 text-5xl sm:text-8xl lg:text-9xl font-bold leading-none"
       >
-        <h1>Hey, <br /> I'm Omar</h1>
+        <h1 class="z-10">Hey, <br /> I'm Omar</h1>
         <img
-          class="w-36 -top-7 object-contain right-0 absolute rounded-3xl contrast-150 grayscale dark:grayscale-0 dark:saturate-50"
+          class="w-36 sm:w-52 lg:w-96 lg:-top-24 -top-7 right-0 md:right-12 md:-top-5 object-contain absolute rounded-3xl contrast-150 grayscale dark:grayscale-0 dark:saturate-50"
           src="/public/me.png"
           alt="omar jaff"
         />
       </div>
       <div>
         <a
-          class="text-sm my-12 text-neutral-100 font-semibold items-center gap-x-2 bg-neutral-950 dark:bg-neutral-100 dark:text-neutral-950 px-4 py-2.5 rounded-full"
+          class="text-sm my-12 lg:text-xl z-10 text-neutral-100 font-semibold items-center gap-x-2 bg-neutral-950 dark:bg-neutral-100 dark:text-neutral-950 px-4 py-2.5 rounded-full"
           href="mailto:me@omarjaff.com"
           >me@omarjaff.com
         </a>
       </div>
     </header>
 
-    <main class="mt-10 space-y-20 dark:text-neutral-100 text-neutral-950">
-      <div class="text-neutral-700 dark:text-neutral-400 prose">
+    <main
+      class="mt-10 sm:mt-16 md:mt-32 lg:mt-52 space-y-20 dark:text-neutral-100 text-neutral-950"
+    >
+      <div
+        class="text-neutral-700 dark:text-neutral-300 text-base prose md:prose-2xl"
+      >
         {aboutMeParagraphs.map((p) => <p>{p}</p>)}
       </div>
     </main>
