@@ -126,7 +126,7 @@ const paragraphs = frontmatter.overview.split(". ");
 
     <div class="mx-auto max-w-7xl px-6 lg:px-8 mt-24 sm:mt-32 lg:mt-40">
       <div class="mx-auto max-w-3xl">
-        <div class="prose lg:prose-xl text-neutral-950 dark:text-neutral-200">
+        <div class="prose lg:prose-xl text-neutral-950 dark:text-neutral-400">
           <h2 class="dark:text-neutral-100">Overview</h2>
           <div>
             {paragraphs.map((p) => <p>{p}</p>)}
@@ -141,7 +141,7 @@ const paragraphs = frontmatter.overview.split(". ");
           {
             frontmatter.whatWeDid &&
               frontmatter.whatWeDid.map((tech) => (
-                <li class="rounded-full bg-neutral-100 dark:bg-neutral-700 dark:text-neutral-200 px-4 py-1.5 text-base text-neutral-600">
+                <li class="rounded-full bg-neutral-100 dark:bg-neutral-700 dark:text-neutral-200 px-4 py-1.5 text-base text-neutral-600 hover:bg-neutral-300 dark:hover:bg-neutral-800 transition-colors duration-200">
                   {tech}
                 </li>
               ))
