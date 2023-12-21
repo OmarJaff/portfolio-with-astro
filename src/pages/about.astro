@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 const aboutme =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
 
-const paragraphs = aboutme.split(". ");
+const aboutMeParagraphs = aboutme.split(". ");
 ---
 
 <Layout title="About Me">
@@ -14,8 +14,8 @@ const paragraphs = aboutme.split(". ");
       >
         <h1>Hey, <br /> I'm Omar</h1>
         <img
-          class="w-36 -top-7 object-contain right-0 absolute rounded-3xl contrast-150 grayscale"
-          src="/public/me-colored.png"
+          class="w-36 -top-7 object-contain right-0 absolute rounded-3xl contrast-150 grayscale dark:grayscale-0 dark:saturate-50"
+          src="/public/me.png"
           alt="omar jaff"
         />
       </div>
@@ -30,10 +30,7 @@ const paragraphs = aboutme.split(". ");
 
     <main class="mt-10 space-y-20 dark:text-neutral-100 text-neutral-950">
       <div class="text-neutral-700 dark:text-neutral-400 prose">
-        {paragraphs.map((p) => <p>{p}</p>)}
-      </div>
-      <div>
-        <h2 class="font-bold text-3xl sm:text-9xl">How do i work?</h2>
+        {aboutMeParagraphs.map((p) => <p>{p}</p>)}
       </div>
     </main>
   </div>
