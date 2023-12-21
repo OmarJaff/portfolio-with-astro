@@ -1,7 +1,40 @@
 ---
 import Layout from "../layouts/Layout.astro";
+const aboutme =
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+
+const paragraphs = aboutme.split(". ");
 ---
 
-<Layout title="About Omar">
-  <h1 class="text-white text-3xl">about us</h1>
+<Layout title="About Me">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8 mt-12">
+    <header class="relative space-y-8">
+      <div
+        class="flex w-full dark:text-neutral-100 text-neutral-950 text-5xl sm:text-9xl font-bold leading-none"
+      >
+        <h1>Hey, <br /> I'm Omar</h1>
+        <img
+          class="w-36 -top-7 object-contain right-0 absolute rounded-3xl contrast-150 grayscale"
+          src="/public/me-colored.png"
+          alt="omar jaff"
+        />
+      </div>
+      <div>
+        <a
+          class="text-sm my-12 text-neutral-100 font-semibold items-center gap-x-2 bg-neutral-950 dark:bg-neutral-100 dark:text-neutral-950 px-4 py-2.5 rounded-full"
+          href="mailto:me@omarjaff.com"
+          >me@omarjaff.com
+        </a>
+      </div>
+    </header>
+
+    <main class="mt-10 space-y-20 dark:text-neutral-100 text-neutral-950">
+      <div class="text-neutral-700 dark:text-neutral-400 prose">
+        {paragraphs.map((p) => <p>{p}</p>)}
+      </div>
+      <div>
+        <h2 class="font-bold text-3xl sm:text-9xl">How do i work?</h2>
+      </div>
+    </main>
+  </div>
 </Layout>
