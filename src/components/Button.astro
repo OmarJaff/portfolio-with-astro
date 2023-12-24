@@ -2,12 +2,20 @@
 const {
   hasTitle = true,
   title = "button",
+  ariaLabel = "aria label button",
+  role = "button",
   class: ClassName = "text-white",
   "@click": click,
 } = Astro.props;
 ---
 
-<button @click={click} class:list=`${ClassName} capitalize` type="button">
+<button
+  aria-label={ariaLabel}
+  {role}
+  @click={click}
+  class:list=`${ClassName} capitalize`
+  type="button"
+>
   {hasTitle && <p>{title}</p>}
 
   <slot />

@@ -82,11 +82,14 @@ const FormatedProjectDate = new Date(projectDate).toLocaleString("en-US", {
       </div><div class="mt-8 flex">
         <a
           class="inline-flex rounded-full text-sm font-semibold transition bg-neutral-950 text-neutral-100"
-          aria-label="Read case study: FamilyFund"
+          aria-label=" Read More about this project"
+          role="button"
           href={url}
         >
           <Button
-            title="Read More"
+            title="Read More about this project"
+            role="link"
+            ariaLabel="click to read more about this project"
             class="hover:text-primary-gray-200 transition duration-100 relative top-px bg-primary-black-base dark:bg-secondary-black flex items-center lg:px-6 px-4 py-3 rounded-full text-white"
           />
         </a>

@@ -31,7 +31,12 @@ const { class: className } = Astro.props;
 </script>
 
 <div x-data="toggler">
-  <Button @click="toggle()" hasTitle={false} class={className}>
+  <Button
+    @click="toggle()"
+    hasTitle={false}
+    class={className}
+    ariaLabel="dark theme toggler"
+  >
     <svg
       class="h-6 w-6 hidden dark:flex"
       xmlns="http://www.w3.org/2000/svg"

@@ -41,18 +41,18 @@ import Button from "./Button.astro";
               />
             </div>
             <dl class="flex flex-auto flex-wrap gap-x-2">
-              <dd class="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
+              <dd class="w-full flex-none text-sm font-medium text-neutral-900 dark:text-neutral-100">
                 {work.company}
               </dd>
               <dt class="sr-only">Role</dt>
-              <dd class="text-xs text-zinc-500 dark:text-zinc-400">
+              <dd class="text-xs text-neutral-500 dark:text-neutral-400">
                 {work.role}
               </dd>
               <dt class="sr-only">Date</dt>
               <>
                 <dt class="sr-only">Company</dt>
                 <dd
-                  class="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
+                  class="ml-auto text-xs text-neutral-500 dark:text-neutral-500"
                   aria-label="2019 until Present"
                 >
                   <time datetime={work.from}>{work.from}</time>
@@ -73,6 +73,7 @@ import Button from "./Button.astro";
     <Button
       class="bg-primary-black-base dark:bg-secondary-black h-[10.5] justify-center py-2.5 px-5 rounded-full transition duration-100 text-neutral-100 items-center gap-x-2 group-hover:text-neutral-300 hover:text-neutral-300 flex capitalize"
       title="Preview CV"
+      ariaLabel="Preview CV"
     >
       <svg
         viewBox="0 0 16 16"
