@@ -1,6 +1,6 @@
 ---
 headline: "My first article"
-image: ""
+image: "../../../public/images/articles/andrew-neel-cckf4TsHAuw-unsplash.jpg"
 introduction: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent lobortis dui et ipsum ullamcorper egestas. Pellentesque dapibus eros cursus vehicula hendrerit. Etiam egestas dolor sed finibus tincidunt. Proin feugiat vulputate felis non congue. Quisque laoreet dui a velit tincidunt, non ullamcorper sapien maximus. Ut ultricies velit a hendrerit convallis. Curabitur ac est nec arcu auctor consectetur sed a tortor. Morbi eget mauris ut leo feugiat tempor. Curabitur semper massa turpis, eu varius nibh venenatis sit amet. Duis imperdiet vulputate cursus."
 content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent lobortis dui et ipsum ullamcorper egestas. Pellentesque dapibus eros cursus vehicula hendrerit. Etiam egestas dolor sed finibus tincidunt. Proin feugiat vulputate felis non congue. Quisque laoreet dui a velit tincidunt, non ullamcorper sapien maximus. Ut ultricies velit a hendrerit convallis. Curabitur ac est nec arcu auctor consectetur sed a tortor. Morbi eget mauris ut leo feugiat tempor. Curabitur semper massa turpis, eu varius nibh venenatis sit amet. Duis imperdiet vulputate cursus.
 
