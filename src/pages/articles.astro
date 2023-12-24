@@ -36,6 +36,7 @@ const allArticles = await Astro.glob("../pages/articles/*.md");
             allArticles.flatMap((article) =>
               article.frontmatter.published ? (
                 <Article
+                  url={article.url}
                   headline={article.frontmatter.headline}
                   introduction={article.frontmatter.introduction}
                   publishedDate={article.frontmatter.publishedDate}

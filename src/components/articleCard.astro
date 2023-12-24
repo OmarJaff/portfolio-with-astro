@@ -1,5 +1,5 @@
 ---
-const { headline, introduction, publishedDate } = Astro.props;
+const { headline, introduction, publishedDate, url = "/" } = Astro.props;
 
 const FormatedProjectDate = new Date(publishedDate).toLocaleString("en-US", {
   month: "long",
@@ -15,8 +15,7 @@ const FormatedProjectDate = new Date(publishedDate).toLocaleString("en-US", {
       <div
         class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-neutral-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-neutral-800/50 sm:-inset-x-6 sm:rounded-2xl"
       >
-      </div><a
-        href="/articles/crafting-a-design-system-for-a-multiplanetary-future"
+      </div><a href={url}
         ><span
           class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"
         ></span><span class="relative z-10">{headline}</span></a
