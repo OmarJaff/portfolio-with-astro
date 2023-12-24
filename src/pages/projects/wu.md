@@ -8,11 +8,13 @@ description: "is simply dummy text of the printing and typesetting industry. Lor
 
 technologies: "API, Integration, Fintech"
 category: "development"
+projectPreviewImage:
+  url: "../../../public/images/projects/WU-Light.svg"
 image:
-  url: "../../../public/WU-Light.svg"
+  url: "../../../public/images/projects/WU-Light.svg"
   alt: "Western Union Logo"
 darkThemeImage:
-  url: "../../../public/WU-Dark.svg"
+  url: "../../../public/images/projects/WU-Dark.svg"
   alt: "Western Union Logo"
 tags: ["astro", "blogging", "learning in public"]
 client: "NassWallet"
