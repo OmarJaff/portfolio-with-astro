@@ -47,9 +47,9 @@ const publishedDate = new Date(frontmatter.date).toLocaleString("en-US", {
             </header>
 
             <div class="mt-8 prose dark:prose-invert" data-mdx-content="true">
-              <div class="prose lg:prose-lg">
+              <div class="prose lg:prose-lg dark:text-neutral-400">
                 {frontmatter.introduction}
-                {frontmatter.content}
+                <slot />
               </div>
             </div>
           </article>

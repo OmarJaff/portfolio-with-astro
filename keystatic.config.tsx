@@ -6,10 +6,11 @@ export default config({
     kind: "local",
   },
   collections: {
-    posts: collection({
-      label: "Posts",
+    articles: collection({
+      label: "Articles",
       slugField: "title",
-      path: "src/content/posts/*",
+
+      path: "src/content/articles/*",
       format: { contentField: "content" },
       schema: {
         title: fields.slug({ name: { label: "Title" } }),
@@ -79,14 +80,17 @@ export default config({
         project_icon: fields.image({
           label: "Project Icon (For Light Theme)",
           validation: { isRequired: true },
+          publicPath: "public/images/projects",
         }),
         dark_project_icon: fields.image({
           label: "Project Icon (For Dark Theme)",
           validation: { isRequired: true },
+          publicPath: "public/images/projects",
         }),
         image: fields.image({
           label: "Project Image",
           validation: { isRequired: true },
+          publicPath: "public/images/projects",
         }),
         introduction: fields.text({
           label: "Introduction",
