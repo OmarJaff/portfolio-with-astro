@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Article from "../components/articleCard.astro";
 import { getCollection } from "astro:content";
 
-const allArticles = await getCollection("posts");
+const allArticles = await getCollection("articles");
 ---
 
 <Layout title="Articles">
@@ -38,7 +38,7 @@ const allArticles = await getCollection("posts");
             allArticles.flatMap((article) =>
               article.data.Published ? (
                 <Article
-                  url={`/posts/${article.slug}`}
+                  url={`/articles/${article.slug}`}
                   headline={article.data.title}
                   introduction={article.data.introduction}
                   publishedDate={article.data.date}

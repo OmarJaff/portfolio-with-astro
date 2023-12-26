@@ -1,16 +1,11 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from "./Layout.astro";
 
 const { frontmatter } = Astro.props;
 
-const publishedDate = new Date(frontmatter.projectDate).toLocaleString(
-  "en-US",
-  {
-    year: "numeric",
-  }
-);
-
-const paragraphs = frontmatter.content.split(". ");
+const publishedDate = new Date(frontmatter.date).toLocaleString("en-US", {
+  year: "numeric",
+});
 ---
 
 <Layout title={frontmatter.title}>
@@ -41,32 +36,21 @@ const paragraphs = frontmatter.content.split(". ");
               <h1
                 class="mt-6 text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl"
               >
-                {frontmatter.headline}
+                {frontmatter.title}
               </h1><time
-                datetime={frontmatter.publishedDate}
+                datetime={publishedDate}
                 class="order-first flex items-center text-base text-zinc-400 dark:text-zinc-500"
                 ><span
                   class="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500"
-                ></span><span class="ml-3">{frontmatter.publishedDate}</span
-                ></time
+                ></span><span class="ml-3">{publishedDate}</span></time
               >
             </header>
 
             <div class="mt-8 prose dark:prose-invert" data-mdx-content="true">
-              <img
-                alt=""
-                loading="lazy"
-                width="1310"
-                height="872"
-                decoding="async"
-                data-nimg="1"
-                src={frontmatter.image}
-                class="contrast-200"
-                style="color: transparent;"
-              />
-              <p class="prose lg:prose-lg">
-                {paragraphs.map((p) => <p>{p}</p>)}
-              </p>
+              <div class="prose lg:prose-lg">
+                {frontmatter.introduction}
+                {frontmatter.content}
+              </div>
             </div>
           </article>
         </div>
