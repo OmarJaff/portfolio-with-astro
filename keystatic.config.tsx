@@ -36,6 +36,9 @@ export default config({
               italic: true,
               strikethrough: true,
               code: true,
+              subscript: true,
+              superscript: true,
+              underline: true,
             },
             listTypes: {
               ordered: true,
@@ -48,16 +51,21 @@ export default config({
             },
             softBreaks: true,
             alignment: true,
-            inlineMarks: {
-              keyboard: true,
-              subscript: true,
-              superscript: true,
-              underline: true,
-            },
           },
+          tables: true,
           dividers: true,
           links: true,
-          images: true,
+          images: {
+            directory: "/public/images/articles/",
+            publicPath: "/public/images/articles/",
+            schema: {
+              title: fields.text({
+                label: "Caption",
+                description:
+                  "The text to display under the image in a caption.",
+              }),
+            },
+          },
         }),
       },
     }),
