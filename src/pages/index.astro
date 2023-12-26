@@ -2,7 +2,10 @@
 import Layout from "../layouts/Layout.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import WorkPanel from "../components/WorkPanel.astro";
+import { getCollection } from "astro:content";
+
 const allProjects = await Astro.glob("../pages/projects/*.md");
+
 const experiences = [
   {
     title: "Development",

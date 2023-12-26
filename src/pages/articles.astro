@@ -1,7 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Article from "../components/articleCard.astro";
-const allArticles = await Astro.glob("../pages/articles/*.md");
+import { getCollection } from "astro:content";
+
+const allArticles = await getCollection("posts");
 ---
 
 <Layout title="Articles">
@@ -34,12 +36,12 @@ const allArticles = await Astro.glob("../pages/articles/*.md");
         <div class="flex max-w-3xl flex-col gap-y-16">
           {
             allArticles.flatMap((article) =>
-              article.frontmatter.published ? (
+              article.data.Published ? (
                 <Article
-                  url={article.url}
-                  headline={article.frontmatter.headline}
-                  introduction={article.frontmatter.introduction}
-                  publishedDate={article.frontmatter.publishedDate}
+                  url={`/posts/${article.slug}`}
+                  headline={article.data.title}
+                  introduction={article.data.introduction}
+                  publishedDate={article.data.date}
                 />
               ) : (
                 []
