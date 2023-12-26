@@ -4,6 +4,7 @@ import Layout from "./Layout.astro";
 const { frontmatter } = Astro.props;
 
 const publishedDate = new Date(frontmatter.date).toLocaleString("en-US", {
+  month: "long",
   year: "numeric",
 });
 ---
@@ -46,12 +47,12 @@ const publishedDate = new Date(frontmatter.date).toLocaleString("en-US", {
               >
             </header>
 
-            <div class="mt-8 prose dark:prose-invert" data-mdx-content="true">
-              <div class="prose lg:prose-lg dark:text-neutral-400">
-                {frontmatter.introduction}
-                <slot />
-              </div>
-            </div>
+            <main
+              class="mt-8 prose lg:prose-xl prose-neutral dark:prose-invert prose-img:rounded-xl hover:prose-img:opacity-90 transition-opacity duration-600 prose-a:underline prose-a:text-blue-700 hover:prose-a:text-blue-900"
+            >
+              {frontmatter.introduction}
+              <slot />
+            </main>
           </article>
         </div>
       </div>

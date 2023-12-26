@@ -22,13 +22,13 @@ const FormatedProjectDate = new Date(publishedDate).toLocaleString("en-US", {
       >
     </h2><time
       class="md:hidden relative z-10 order-first mb-3 flex items-center text-sm text-neutral-400 dark:text-neutral-500 pl-3.5"
-      datetime={publishedDate}
+      datetime={FormatedProjectDate}
       ><span
         class="absolute inset-y-0 left-0 flex items-center"
         aria-hidden="true"
         ><span class="h-4 w-0.5 rounded-full bg-neutral-200 dark:bg-neutral-500"
         ></span></span
-      >{publishedDate}</time
+      >{FormatedProjectDate}</time
     ><p
       class="relative z-10 mt-2 text-sm text-neutral-600 dark:text-neutral-400 line-clamp-3"
     >
@@ -51,6 +51,6 @@ const FormatedProjectDate = new Date(publishedDate).toLocaleString("en-US", {
     </div>
   </div><time
     class="mt-1 hidden md:block relative z-10 order-first mb-3 flex items-center text-sm text-neutral-400 dark:text-neutral-500"
-    datetime={publishedDate}>{publishedDate}</time
+    datetime={FormatedProjectDate}>{FormatedProjectDate}</time
   >
 </article>
