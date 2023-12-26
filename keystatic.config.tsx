@@ -22,7 +22,7 @@ export default config({
           label: "Publish Date",
           validation: { isRequired: true },
         }),
-        introduction: fields.document({
+        introduction: fields.text({
           label: "Introduction",
         }),
         content: fields.document({
@@ -41,6 +41,7 @@ export default config({
       format: { contentField: "content" },
       schema: {
         title: fields.slug({ name: { label: "Title" } }),
+
         Published: fields.checkbox({
           label: "Featured",
           defaultValue: false,
@@ -68,10 +69,11 @@ export default config({
             { label: "Laravel", value: "laravel" },
             { label: "Alpine.JS", value: "alpine" },
             { label: "TailwindCSS", value: "tailwind" },
-            { label: "WordPress Plugin", value: "flow" },
-            { label: "Open Souce", value: "flow" },
+            { label: "WordPress Plugin", value: "wordpress" },
+            { label: "Open Souce", value: "isOpenSourced" },
             { label: "Custom Integration Flow", value: "flow" },
-            { label: "Quality Assurance", value: "flow" },
+            { label: "Quality Assurance", value: "qa" },
+            { label: "Project Management", value: "management" },
           ],
         }),
         project_icon: fields.image({
@@ -85,6 +87,10 @@ export default config({
         image: fields.image({
           label: "Project Image",
           validation: { isRequired: true },
+        }),
+        introduction: fields.text({
+          label: "Introduction",
+          description: "Short Introduction about the project in few words",
         }),
         content: fields.document({
           label: "Content",
