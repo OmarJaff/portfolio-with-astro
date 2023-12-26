@@ -14,6 +14,7 @@ export default config({
       format: { contentField: "content" },
       schema: {
         title: fields.slug({ name: { label: "Title" } }),
+
         Published: fields.checkbox({
           label: "Published",
           defaultValue: false,
@@ -28,7 +29,32 @@ export default config({
         }),
         content: fields.document({
           label: "Content",
-          formatting: true,
+
+          formatting: {
+            inlineMarks: {
+              bold: true,
+              italic: true,
+              strikethrough: true,
+              code: true,
+            },
+            listTypes: {
+              ordered: true,
+              unordered: true,
+            },
+            headingLevels: [1, 2, 3, 4, 5, 6],
+            blockTypes: {
+              blockquote: true,
+              code: true,
+            },
+            softBreaks: true,
+            alignment: true,
+            inlineMarks: {
+              keyboard: true,
+              subscript: true,
+              superscript: true,
+              underline: true,
+            },
+          },
           dividers: true,
           links: true,
           images: true,
@@ -39,6 +65,7 @@ export default config({
       label: "Projects",
       slugField: "title",
       path: "src/content/projects/*",
+
       format: { contentField: "content" },
       schema: {
         title: fields.slug({ name: { label: "Title" } }),
