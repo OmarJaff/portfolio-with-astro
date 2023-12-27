@@ -5,6 +5,7 @@ export default config({
   storage: {
     kind: "local",
   },
+
   collections: {
     articles: collection({
       label: "Articles",
