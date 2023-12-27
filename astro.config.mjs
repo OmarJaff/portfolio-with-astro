@@ -10,5 +10,5 @@ import markdoc from "@astrojs/markdoc";
 export default defineConfig({
   output: "hybrid",
   integrations: [tailwind(), alpinejs(), react(), keystatic(), markdoc()],
-  site: "http://example.com"
+  site: "http://example.com",
 });
