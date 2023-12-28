@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import ProjectCard from "../components/ProjectCard.astro";
+import Project from "../components/ProjectCard.astro";
 import WorkPanel from "../components/WorkPanel.astro";
 import { getCollection } from "astro:content";
 
@@ -104,7 +104,7 @@ const works = [
             {
               allProjects.flatMap((project) =>
                 project.data.isPublished && project.data.isFeatured ? (
-                  <ProjectCard
+                  <Project
                     url={`/projects/${project.slug}`}
                     category={project.data.category}
                     title={project.data.title}

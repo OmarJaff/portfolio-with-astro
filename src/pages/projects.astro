@@ -1,7 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Project from "../components/Project.astro";
-const allProjects = await Astro.glob("../pages/projects/*.md");
+import Project from "../components/ProjectCard.astro";
+import { getCollection } from "astro:content";
+
+const allProjects = await getCollection("projects");
 ---
 
 <Layout title="Projects">
@@ -26,23 +28,23 @@ const allProjects = await Astro.glob("../pages/projects/*.md");
       </div>
     </div>
 
-    <div class="space-y-16 lg:space-y-42">
-      {
-        allProjects.flatMap((project) => (
-          <Project
-            url={project.url}
-            projectTitle={project.frontmatter.title}
-            projectIntro={project.frontmatter.projectIntro}
-            projectDate={project.frontmatter.projectDate}
-            description={project.frontmatter.description}
-            technologies={project.frontmatter.technologies}
-            imgSrc={project.frontmatter.image.url}
-            imgAlt={project.frontmatter.image.alt}
-            darkThemeImageSrc={project.frontmatter.darkThemeImage.url}
-            darkThemeImageAlt={project.frontmatter.darkThemeImage.alt}
-          />
-        ))
-      }
+    <div class="mx-auto max-w-2xl lg:max-w-none space-y-6">
+      <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+        {
+          allProjects.map((project) => (
+            <Project
+              url={`/projects/${project.slug}`}
+              category={project.data.category}
+              title={project.data.title}
+              date={project.data.date}
+              introduction={project.data.introduction}
+              technologies={project.data.technologies}
+              imgSrc={project.data.project_icon}
+              darkThemeImageSrc={project.data.dark_project_icon}
+            />
+          ))
+        }
+      </div>
     </div>
   </div>
 </Layout>
