@@ -98,7 +98,7 @@ export default config({
             { label: "Mobile Development", value: "Mobile Development" },
           ],
         }),
-        clinet: fields.text({ label: "Clinet Name" }),
+        client: fields.text({ label: "Clinet Name" }),
         technologies: fields.multiselect({
           label: "Project Technologies (What I did)",
           options: [
