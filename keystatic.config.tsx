@@ -79,7 +79,11 @@ export default config({
       schema: {
         title: fields.slug({ name: { label: "Title" } }),
 
-        Published: fields.checkbox({
+        isPublished: fields.checkbox({
+          label: "Published",
+          defaultValue: false,
+        }),
+        isFeatured: fields.checkbox({
           label: "Featured",
           defaultValue: false,
         }),
@@ -90,27 +94,33 @@ export default config({
         category: fields.multiselect({
           label: "Project Category",
           options: [
-            { label: "API Integration", value: "api" },
-            { label: "Web Development", value: "development" },
-            { label: "Mobile Development", value: "mobile-dev" },
+            { label: "API Integration", value: "API Integration" },
+            { label: "Web Development", value: "Web Development" },
+            { label: "Mobile Development", value: "Mobile Development" },
           ],
         }),
         clinet: fields.text({ label: "Clinet Name" }),
         technologies: fields.multiselect({
           label: "Project Technologies (What I did)",
           options: [
-            { label: "Winter CMS", value: "winter-cms" },
-            { label: "October CMS", value: "october-cms" },
-            { label: "API Integration", value: "api-int" },
-            { label: "PHP", value: "php" },
-            { label: "Laravel", value: "laravel" },
-            { label: "Alpine.JS", value: "alpine" },
-            { label: "TailwindCSS", value: "tailwind" },
-            { label: "WordPress Plugin", value: "wordpress" },
-            { label: "Open Souce", value: "isOpenSourced" },
-            { label: "Custom Integration Flow", value: "flow" },
-            { label: "Quality Assurance", value: "qa" },
-            { label: "Project Management", value: "management" },
+            { label: "Winter CMS", value: "Winter CMS" },
+            { label: "October CMS", value: "October CMS" },
+            { label: "API Integration", value: "API Integration" },
+            { label: "PHP", value: "PHP" },
+            { label: "Laravel", value: "Laravel" },
+            { label: "Alpine.JS", value: "Alpine.JS" },
+            { label: "TailwindCSS", value: "TailwindCSS" },
+            {
+              label: "WordPress Plugin",
+              value: "WordPress Plugin Development",
+            },
+            { label: "Open Souce", value: "Open Source" },
+            {
+              label: "Custom Integration Flow",
+              value: "Custom Integration Flow",
+            },
+            { label: "Quality Assurance", value: "Quality Assurance" },
+            { label: "Project Management", value: "Project Management" },
           ],
         }),
         project_icon: fields.image({
