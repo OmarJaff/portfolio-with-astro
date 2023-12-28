@@ -14,7 +14,7 @@ const FormatedProjectDate = new Date(frontmatter.date).toLocaleString("en-US", {
 
   scroll(
     animate(
-      "img",
+      "#projectimg",
       {
         filter: [
           "grayscale(100%)",
@@ -105,7 +105,7 @@ const FormatedProjectDate = new Date(frontmatter.date).toLocaleString("en-US", {
         >
           <div class="group relative">
             <img
-              id="myimage"
+              id="projectimg"
               alt=`${frontmatter.title}'s project image`
               width="3648"
               height="3117"
@@ -121,7 +121,9 @@ const FormatedProjectDate = new Date(frontmatter.date).toLocaleString("en-US", {
 
     <div class="mx-auto max-w-7xl px-6 lg:px-8 mt-24 sm:mt-32 lg:mt-40">
       <div class="mx-auto max-w-3xl">
-        <div class="prose lg:prose-xl text-neutral-950 dark:text-neutral-400">
+        <div
+          class="grayscale-0 prose lg:prose-xl hover:prose-img:opacity-90 prose-img:transition-opacity duration-600 prose-a:underline prose-a:text-blue-700 hover:prose-a:text-blue-900 prose-neutral dark:prose-invert"
+        >
           <h2 class="dark:text-neutral-100">Overview</h2>
           <slot />
           {
@@ -141,7 +143,6 @@ const FormatedProjectDate = new Date(frontmatter.date).toLocaleString("en-US", {
           }
         </ul>
       </div>
-      <slot />
     </div>
   </div>
 </Layout>
