@@ -74,7 +74,6 @@ export default config({
       label: "Projects",
       slugField: "title",
       path: "src/content/projects/*",
-
       format: { contentField: "content" },
       schema: {
         title: fields.slug({ name: { label: "Title" } }),
@@ -126,17 +125,20 @@ export default config({
         project_icon: fields.image({
           label: "Project Icon (For Light Theme)",
           validation: { isRequired: true },
-          publicPath: "public/images/projects",
+          directory: "/public/images/articles/",
+          publicPath: "/public/images/articles/",
         }),
         dark_project_icon: fields.image({
           label: "Project Icon (For Dark Theme)",
           validation: { isRequired: true },
-          publicPath: "public/images/projects",
+          directory: "/public/images/articles/",
+          publicPath: "/public/images/articles/",
         }),
         image: fields.image({
           label: "Project Image",
           validation: { isRequired: true },
-          publicPath: "public/images/projects",
+          directory: "/public/images/articles/",
+          publicPath: "/public/images/articles/",
         }),
         introduction: fields.text({
           label: "Introduction",
@@ -144,10 +146,43 @@ export default config({
         }),
         content: fields.document({
           label: "Content",
-          formatting: true,
+
+          formatting: {
+            inlineMarks: {
+              bold: true,
+              italic: true,
+              strikethrough: true,
+              code: true,
+              subscript: true,
+              superscript: true,
+              underline: true,
+            },
+            listTypes: {
+              ordered: true,
+              unordered: true,
+            },
+            headingLevels: [1, 2, 3, 4, 5, 6],
+            blockTypes: {
+              blockquote: true,
+              code: true,
+            },
+            softBreaks: true,
+            alignment: true,
+          },
+          tables: true,
           dividers: true,
           links: true,
-          images: true,
+          images: {
+            directory: "/public/images/articles/",
+            publicPath: "/public/images/articles/",
+            schema: {
+              title: fields.text({
+                label: "Caption",
+                description:
+                  "The text to display under the image in a caption.",
+              }),
+            },
+          },
         }),
       },
     }),
