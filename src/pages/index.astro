@@ -4,7 +4,7 @@ import ProjectCard from "../components/ProjectCard.astro";
 import WorkPanel from "../components/WorkPanel.astro";
 import { getCollection } from "astro:content";
 
-const allProjects = await Astro.glob("../pages/projects/*.md");
+const allProjects = await getCollection("projects");
 
 const experiences = [
   {
@@ -103,18 +103,16 @@ const works = [
           <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
             {
               allProjects.flatMap((project) =>
-                project.frontmatter.isFeatured ? (
+                project.data.isPublished && project.data.isFeatured ? (
                   <ProjectCard
-                    url={project.url}
-                    category={project.frontmatter.category}
-                    projectIntro={project.frontmatter.projectIntro}
-                    projectDate={project.frontmatter.projectDate}
-                    description={project.frontmatter.description}
-                    technologies={project.frontmatter.technologies}
-                    imgSrc={project.frontmatter.image.url}
-                    imgAlt={project.frontmatter.image.alt}
-                    darkThemeImageSrc={project.frontmatter.darkThemeImage.url}
-                    darkThemeImageAlt={project.frontmatter.darkThemeImage.alt}
+                    url={`/projects/${project.slug}`}
+                    category={project.data.category}
+                    title={project.data.title}
+                    date={project.data.date}
+                    introduction={project.data.introduction}
+                    technologies={project.data.technologies}
+                    imgSrc={project.data.project_icon}
+                    darkThemeImageSrc={project.data.dark_project_icon}
                   />
                 ) : (
                   []

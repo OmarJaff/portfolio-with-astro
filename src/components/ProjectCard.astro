@@ -1,17 +1,17 @@
 ---
 const {
-  projectIntro = "Integration with Western Union",
+  title = "Integration with Western Union",
   darkThemeImageSrc = "/WU-Dark.svg",
   darkThemeImageAlt = "image detail",
   category = "Integration",
   imgSrc = "/WU-Light.svg",
   imgAlt = "image detail",
-  projectDate = "2023-02",
-  description = "We developed is a crowdfunding platform for friends and family Allowing users to take personal loans from their network without a traditional financial institution. And this is the second part of the paragraph to give additional details about this project and part of the paragraph to give additional details about this project.",
+  date = "2023-02",
+  introduction = "We developed is a crowdfunding platform for friends and family Allowing users to take personal loans from their network without a traditional financial institution. And this is the second part of the paragraph to give additional details about this project and part of the paragraph to give additional details about this project.",
   url = "/",
 } = Astro.props;
 
-const FormatedProjectDate = new Date(projectDate).toLocaleString("en-US", {
+const FormatedProjectDate = new Date(date).toLocaleString("en-US", {
   month: "long",
   year: "numeric",
 });
@@ -58,9 +58,9 @@ const FormatedProjectDate = new Date(projectDate).toLocaleString("en-US", {
     </p><p
       class="mt-6 font-display text-2xl font-semibold text-neutral-950 dark:text-neutral-100"
     >
-      {projectIntro}
+      {title}
     </p><p class="mt-4 text-base text-neutral-600 dark:text-neutral-400">
-      {description}
+      {introduction}
     </p>
   </article>
 </div>

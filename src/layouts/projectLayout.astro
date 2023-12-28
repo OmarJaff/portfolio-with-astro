@@ -3,14 +3,9 @@ import Layout from "../layouts/Layout.astro";
 
 const { frontmatter } = Astro.props;
 
-const FormatedProjectDate = new Date(frontmatter.projectDate).toLocaleString(
-  "en-US",
-  {
-    year: "numeric",
-  }
-);
-
-const paragraphs = frontmatter.overview.split(". ");
+const FormatedProjectDate = new Date(frontmatter.date).toLocaleString("en-US", {
+  year: "numeric",
+});
 ---
 
 <script type="module" is:inline>
@@ -60,7 +55,7 @@ const paragraphs = frontmatter.overview.split(". ");
               class="mt-6 max-w-3xl text-lg text-neutral-600 dark:text-neutral-400 mx-auto"
             >
               <p>
-                {frontmatter.description}
+                {frontmatter.introduction}
               </p>
             </div>
           </div>
@@ -111,13 +106,13 @@ const paragraphs = frontmatter.overview.split(". ");
           <div class="group relative">
             <img
               id="myimage"
-              alt=""
+              alt=`${frontmatter.title}'s project image`
               width="3648"
               height="3117"
               decoding="async"
               class="w-full"
               sizes="(min-width: 1216px) 76rem, 100vw"
-              src="https://studio.tailwindui.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero.814cd572.jpg&w=2048&q=90"
+              src=`${frontmatter.image}`
             />
           </div>
         </div>
@@ -128,9 +123,7 @@ const paragraphs = frontmatter.overview.split(". ");
       <div class="mx-auto max-w-3xl">
         <div class="prose lg:prose-xl text-neutral-950 dark:text-neutral-400">
           <h2 class="dark:text-neutral-100">Overview</h2>
-          <div>
-            {paragraphs.map((p) => <p>{p}</p>)}
-          </div>
+          <slot />
           {
             frontmatter.whatWeDid && (
               <h2 class="dark:text-neutral-100">What we did</h2>
@@ -139,8 +132,8 @@ const paragraphs = frontmatter.overview.split(". ");
         </div>
         <ul role="list" class="flex flex-wrap gap-4 sm:gap-x-4 list-none mt-6">
           {
-            frontmatter.whatWeDid &&
-              frontmatter.whatWeDid.map((tech) => (
+            frontmatter.technologies &&
+              frontmatter.technologies.map((tech) => (
                 <li class="rounded-full bg-neutral-100 dark:bg-neutral-700 dark:text-neutral-200 px-4 py-1.5 text-base text-neutral-600 hover:bg-neutral-300 dark:hover:bg-neutral-800 transition-colors duration-200">
                   {tech}
                 </li>
@@ -148,7 +141,6 @@ const paragraphs = frontmatter.overview.split(". ");
           }
         </ul>
       </div>
-
       <slot />
     </div>
   </div>
