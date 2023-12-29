@@ -5,6 +5,8 @@ const { platform, username } = Astro.props;
 <a
   href={`https://www.${platform}.com/${username}`}
   target="_blank"
+  role="menuitem"
+  aria-label=`click here to navigate to my ${platform} account`
   class="transition duration-100 hover:text-primary-gray-300"
 >
   <slot />

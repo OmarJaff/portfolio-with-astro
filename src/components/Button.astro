@@ -2,7 +2,7 @@
 const {
   hasTitle = true,
   title = "button",
-  ariaLabel = "aria label button",
+  ariaLabel = "button",
   role = "button",
   class: ClassName = "text-white",
   "@click": click,
@@ -11,10 +11,8 @@ const {
 
 <button
   aria-label={ariaLabel}
-  {role}
   @click={click}
   class:list=`${ClassName} capitalize`
-  type="button"
 >
   {hasTitle && <p>{title}</p>}
 

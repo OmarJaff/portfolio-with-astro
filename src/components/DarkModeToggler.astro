@@ -33,6 +33,7 @@ const { class: className } = Astro.props;
 <div x-data="toggler">
   <Button
     @click="toggle()"
+    ariaLabel="theme toggler"
     hasTitle={false}
     class={className}
     ariaLabel="dark theme toggler"
