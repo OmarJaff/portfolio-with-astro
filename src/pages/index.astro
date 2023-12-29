@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Project from "../components/ProjectCard.astro";
 import WorkPanel from "../components/WorkPanel.astro";
+import CertificatePanel from "../components/CertificatePanel.astro";
 import { getCollection } from "astro:content";
 
 const allProjects = await getCollection("projects");
@@ -38,6 +39,16 @@ const works = [
     role: "Senior Product Engineer",
     from: "2020",
     to: "2023",
+  },
+];
+
+const certificates = [
+  {
+    title: "AWS Cloud practitionar Certification",
+    badgeURL: "../../public/images/aws-logo.png",
+    issued_date: "2024",
+    expiry_date: "2026",
+    company: "AWS",
   },
 ];
 ---
@@ -233,8 +244,9 @@ const works = [
 
     <!-- Work Experiance and CV -->
 
-    <section>
+    <section class="grid sm:grid-cols-2 gap-4">
       <WorkPanel works={works} />
+      <CertificatePanel certificateURL="/" certificates={certificates} />
     </section>
   </main>
 </Layout>
