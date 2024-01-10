@@ -96,6 +96,7 @@ export default config({
             { label: "API Integration", value: "API Integration" },
             { label: "Web Development", value: "Web Development" },
             { label: "Mobile Development", value: "Mobile Development" },
+            { label: "Plugin Development", value: "Plugin Development" },
           ],
         }),
         client: fields.text({ label: "Clinet Name" }),
