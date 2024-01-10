@@ -24,28 +24,20 @@ const FormatedProjectDate = new Date(date).toLocaleString("en-US", {
     <h3>
       <a href={url}
         ><span class="absolute inset-0 rounded-3xl"></span>
-        <img
-          alt={darkThemeImageAlt}
-          loading="lazy"
-          width="36"
-          height="36"
-          decoding="async"
-          data-nimg="1"
-          class="h-16 w-16 hidden dark:flex"
-          src={darkThemeImageSrc}
-          style="color: transparent;"
-        />
-        <img
-          alt={imgAlt}
-          loading="lazy"
-          width="36"
-          height="36"
-          decoding="async"
-          data-nimg="1"
-          class="h-16 w-16 dark:hidden"
-          src={imgSrc}
-          style="color: transparent;"
-        />
+        <div class="h-16 w-16 flex items-center">
+          <img
+            alt={darkThemeImageAlt}
+            class="hidden dark:flex"
+            src={darkThemeImageSrc}
+            style="color: transparent;"
+          />
+          <img
+            alt={imgAlt}
+            class="dark:hidden"
+            src={imgSrc}
+            style="color: transparent;"
+          />
+        </div>
       </a>
     </h3><p
       class="mt-6 flex gap-x-2 text-sm text-neutral-950 dark:text-neutral-100"
@@ -59,7 +51,9 @@ const FormatedProjectDate = new Date(date).toLocaleString("en-US", {
       class="mt-6 font-display text-2xl font-semibold text-neutral-950 dark:text-neutral-100"
     >
       {title}
-    </p><p class="mt-4 text-base text-neutral-600 dark:text-neutral-400">
+    </p><p
+      class="mt-4 text-base text-neutral-600 dark:text-neutral-400 line-clamp-5"
+    >
       {introduction}
     </p>
   </article>
