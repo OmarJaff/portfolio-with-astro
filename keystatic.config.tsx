@@ -95,8 +95,17 @@ export default config({
           options: [
             { label: "API Integration", value: "API Integration" },
             { label: "Web Development", value: "Web Development" },
+
             { label: "Mobile Development", value: "Mobile Development" },
             { label: "Plugin Development", value: "Plugin Development" },
+            {
+              label: "Web Development & API Integration",
+              value: "Web Development & API Integration",
+            },
+            {
+              label: "Mobile & Web Development",
+              value: "Mobile & Web Development",
+            },
           ],
         }),
         client: fields.text({ label: "Clinet Name" }),
@@ -110,6 +119,13 @@ export default config({
             { label: "Laravel", value: "Laravel" },
             { label: "Alpine.JS", value: "Alpine.JS" },
             { label: "TailwindCSS", value: "TailwindCSS" },
+            { label: "Headless CMS", value: "Headless CMS" },
+            { label: "Strapi CMS", value: "Strapi CMS" },
+            { label: "Flutter", value: "Flutter" },
+            {
+              label: "Mobie Application Development",
+              value: "Mobie Application Development",
+            },
             {
               label: "WordPress Plugin",
               value: "WordPress Plugin Development",

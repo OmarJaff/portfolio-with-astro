@@ -3,7 +3,7 @@ const {
   title = "Integration with Western Union",
   darkThemeImageSrc = "/WU-Dark.svg",
   darkThemeImageAlt = "image detail",
-  category = "Integration",
+  category = [],
   imgSrc = "/WU-Light.svg",
   imgAlt = "project icon",
   date = "2023-02",
@@ -46,7 +46,8 @@ const FormatedProjectDate = new Date(date).toLocaleString("en-US", {
         >{FormatedProjectDate}</time
       ><span class="text-neutral-300 dark:text-neutral-400" aria-hidden="true"
         >/</span
-      ><span>{category}</span>
+      >
+      {category && category.map((cat) => <span>{cat}</span>)}
     </p><p
       class="mt-6 font-display text-2xl font-semibold text-neutral-950 dark:text-neutral-100"
     >

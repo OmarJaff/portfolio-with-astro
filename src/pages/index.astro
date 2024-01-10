@@ -113,9 +113,15 @@ const certificates = [
         <div class="mx-auto max-w-2xl lg:max-w-none space-y-6">
           <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
             {
-              allProjects.flatMap((project) =>
-                project.data.isPublished && project.data.isFeatured ? (
+              allProjects
+                .filter(
+                  (project) =>
+                    project.data.isPublished && project.data.isFeatured
+                )
+                .sort((a, b) => new Date(b.data.date) - new Date(a.data.date))
+                .map((project) => (
                   <Project
+                    key={project.slug}
                     url={`/projects/${project.slug}`}
                     category={project.data.category}
                     title={project.data.title}
@@ -125,10 +131,7 @@ const certificates = [
                     imgSrc={project.data.project_icon}
                     darkThemeImageSrc={project.data.dark_project_icon}
                   />
-                ) : (
-                  []
-                )
-              )
+                ))
             }
           </div>
           <div>

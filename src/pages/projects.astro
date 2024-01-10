@@ -31,18 +31,21 @@ const allProjects = await getCollection("projects");
     <div class="mx-auto max-w-2xl lg:max-w-none space-y-6">
       <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
         {
-          allProjects.map((project) => (
-            <Project
-              url={`/projects/${project.slug}`}
-              category={project.data.category}
-              title={project.data.title}
-              date={project.data.date}
-              introduction={project.data.introduction}
-              technologies={project.data.technologies}
-              imgSrc={project.data.project_icon}
-              darkThemeImageSrc={project.data.dark_project_icon}
-            />
-          ))
+          allProjects
+            .sort((a, b) => new Date(b.data.date) - new Date(a.data.date))
+            .map((project) => (
+              <Project
+                key={project.slug}
+                url={`/projects/${project.slug}`}
+                category={project.data.category}
+                title={project.data.title}
+                date={project.data.date}
+                introduction={project.data.introduction}
+                technologies={project.data.technologies}
+                imgSrc={project.data.project_icon}
+                darkThemeImageSrc={project.data.dark_project_icon}
+              />
+            ))
         }
       </div>
     </div>
