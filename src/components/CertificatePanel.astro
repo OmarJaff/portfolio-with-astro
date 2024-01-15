@@ -1,6 +1,5 @@
 ---
-const { certificates = [], certificateURL = "/" } = Astro.props;
-import Button from "./Button.astro";
+
 ---
 
 <div
@@ -23,81 +22,8 @@ import Button from "./Button.astro";
     </svg>
 
     <span class="ml-3">Certificates</span>
-  </h2><ol class="mt-6 space-y-4">
-    {
-      certificates.map((certificate) => (
-        <li class="flex gap-4">
-          <>
-            <div class="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-              <img
-                alt="company Logo"
-                loading="lazy"
-                width="32"
-                height="32"
-                decoding="async"
-                data-nimg="1"
-                class="h-7 w-7"
-                src={certificate.badgeURL}
-                style="color: transparent;"
-              />
-            </div>
-            <dl class="flex flex-auto flex-wrap gap-x-2">
-              <dd class="w-full flex-none text-sm font-medium text-neutral-900 dark:text-neutral-100">
-                {certificate.title}
-              </dd>
-              <dt class="sr-only">Cloud company</dt>
-              <dd class="text-xs text-neutral-500 dark:text-neutral-400">
-                {certificate.company}
-              </dd>
-              <dt class="sr-only">Date</dt>
-              <>
-                <dd
-                  class="ml-auto text-xs text-neutral-500 dark:text-neutral-500"
-                  aria-label="2026 until Present"
-                >
-                  <time datetime={certificate.expiry_date}>
-                    {certificate.issued_date}
-                  </time>
-                  <span aria-hidden="true">—</span>
-                  <time datetime={certificate.expiry_date}>
-                    {certificate.expiry_date}
-                  </time>
-                </dd>
-              </>
-            </dl>
-          </>
-        </li>
-      ))
-    }
-  </ol><a
-    class="w-full flex justify-center pt-2"
-    href={certificateURL}
-    target="_blank"
-  >
-    <Button
-      class="bg-primary-black-base dark:bg-secondary-black h-[10.5] justify-center py-2.5 px-5 rounded-full transition duration-100 text-neutral-100 items-center gap-x-2 group-hover:text-neutral-300 hover:text-neutral-300 flex capitalize"
-      title="View Certificates"
-      role="button"
-      ariaLabel="Preview Certificate"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        class="h-4 w-4 stroke-zinc-100 transition group-active:stroke-neutral-500 group-hover:stroke-neutral-500 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z"
-        ></path>
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path>
-      </svg>
-    </Button>
-  </a>
+  </h2>
+  <div class="w-full pt-6">
+    <slot />
+  </div>
 </div>

@@ -44,7 +44,7 @@ const works = [
 
 const certificates = [
   {
-    title: "AWS Cloud practitionar Certification",
+    title: "AWS Cloud practitionar Certified",
     badgeURL: "../../public/images/aws-logo.png",
     issued_date: "2024",
     expiry_date: "2026",
@@ -249,9 +249,18 @@ const certificates = [
 
     <section class="space-y-6 grid">
       <WorkPanel works={works} />
-      <div class="hidden">
-        <CertificatePanel certificateURL="/" certificates={certificates} />
-      </div>
+      <CertificatePanel>
+        <div
+          data-iframe-width="150"
+          data-iframe-height="270"
+          data-share-badge-id="8b1966c6-8337-4c4c-8380-6fbf24ff2190"
+          data-share-badge-host="https://www.credly.com"
+        >
+        </div><script
+          type="text/javascript"
+          async
+          src="//cdn.credly.com/assets/utilities/embed.js"></script>
+      </CertificatePanel>
     </section>
   </main>
 </Layout>
