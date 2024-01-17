@@ -153,7 +153,7 @@ export default config({
         }),
         image: fields.image({
           label: "Project Image",
-          validation: { isRequired: true },
+          validation: { isRequired: false },
           directory: "/public/images/projects/",
           publicPath: "/public/images/projects/",
         }),
