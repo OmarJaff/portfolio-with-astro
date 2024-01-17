@@ -24,7 +24,6 @@ const FormatedProjectDate = new Date(frontmatter.date).toLocaleString("en-US", {
           "grayscale(0%)",
           "grayscale(100%)",
           "grayscale(100%)",
-          "grayscale(100%)",
         ],
       },
       {
@@ -103,6 +102,7 @@ const FormatedProjectDate = new Date(frontmatter.date).toLocaleString("en-US", {
         <div
           class="-my-px mx-auto max-w-[76rem] bg-neutral-200 dark:bg-neutral-800"
         >
+        {  frontmatter.image && 
           <div class="group relative">
             <img
               id="projectimg"
@@ -115,6 +115,7 @@ const FormatedProjectDate = new Date(frontmatter.date).toLocaleString("en-US", {
               src=`${frontmatter.image}`
             />
           </div>
+        }
         </div>
       </div>
     </header>
