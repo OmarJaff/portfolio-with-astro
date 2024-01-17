@@ -1,9 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-const aboutme =
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
-
-const aboutMeParagraphs = aboutme.split(". ");
 ---
 
 <Layout title="About Me">
@@ -32,9 +28,59 @@ const aboutMeParagraphs = aboutme.split(". ");
       class="mt-10 sm:mt-16 md:mt-32 lg:mt-40 space-y-20 dark:text-neutral-100 text-neutral-950"
     >
       <div
-        class="text-neutral-700 dark:text-neutral-300 text-base prose lg:prose-xl"
+        class="text-neutral-700 dark:text-neutral-300 text-base prose lg:prose-xl dark:prose-invert"
       >
-        {aboutMeParagraphs.map((p) => <p>{p}</p>)}
+        <p>
+          I'm a passionate full-stack web developer with a proven track record
+          of transforming ideas into digital reality. With 5 years of hands-on
+          experience, I thrive on creating user-centric web experiences that
+          resonate.
+        </p>
+        <h3>What I Bring to the Table:</h3>
+        <h4>🚀 Expertise in Development:</h4>
+        <p>
+          I specialize in full-stack web development, bringing ideas to life
+          through robust back-end solutions and intuitive user interfaces.
+          Crafting seamless digital experiences is not just a job for me; it's a
+          creative journey.
+        </p>
+        <h4>💡 Fintech Innovator:</h4>
+        <p>
+          In the dynamic world of fintech, I've spent the past 3 years leading
+          various financial integrations. My passion lies in leveraging
+          technology to drive innovation and efficiency in the financial
+          landscape, creating solutions that make an impact.
+        </p>
+        <h4>☁️ Cloud Computing Enthusiast:</h4>
+        <p>
+          Certified by AWS, I've embraced the power of cloud technology. My
+          journey with AWS involves optimizing performance, enhancing
+          scalability, and ensuring the seamless operation of digital solutions.
+          The cloud is not just a platform; it's a foundation for transformative
+          possibilities.
+        </p>
+        <h3>What Drives Me:</h3>
+        <h4>🌐 Empowering Digital Experiences:</h4>
+        <p>
+          Every line of code I write is dedicated to empowering digital
+          experiences. I believe in creating solutions that not only meet but
+          exceed expectations, leaving a lasting impression on users.
+        </p>
+        <h4>🛠️ Innovation at Every Step:</h4>
+        <p>
+          Whether it's developing a custom WordPress plugin, bridging APIs, or
+          crafting a disaster recovery plan, I approach each project with
+          innovation at its core. Challenges are opportunities to find creative
+          solutions.
+        </p>
+        <h4>Join Me on This Digital Journey:</h4>
+        <p>
+          Let's connect and explore the endless possibilities of technology.
+          Whether you're a fellow developer, a stakeholder in fintech, or
+          someone curious about the digital realm, I invite you to be a part of
+          this journey. Together, let's turn ideas into digital masterpieces.
+          <a href="mailto:me@omarjaff.com">me@omarjaff.com</a>
+        </p>
       </div>
     </main>
   </div>
