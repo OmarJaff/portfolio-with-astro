@@ -25,7 +25,7 @@ const ImageContainer = (props) => {
         offset: ['start start', 'end end'],
       }
     );
-  }, []); // Ensure the dependency array is provided to useEffect to avoid unnecessary re-renders
+  }, []); 
 
   return (
     <div className="group relative">
