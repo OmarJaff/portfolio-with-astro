@@ -4,13 +4,14 @@ import Menu from "./Menu.astro";
 import MenuItem from "./MenuItem.astro";
 
 const { class: ClassName } = Astro.props;
-const currentPath = new URL(Astro.request.url).pathname;
+const pathName = new URL(Astro.request.url).pathname;
+const currentPath = pathName.slice(1);
 
 const MenuItems = [
-  { title: "Home", url: "/" },
-  { title: "About", url: "/about" },
-  { title: "Projects", url: "/projects" },
-  { title: "Articles", url: "/articles" },
+  { title: "Home", url: "" },
+  { title: "About", url: "about" },
+  { title: "Projects", url: "projects" },
+  { title: "Articles", url: "articles" },
 ];
 ---
 
@@ -19,7 +20,7 @@ const MenuItems = [
   import focus from "@alpinejs/focus";
 
   Alpine.plugin(focus);
-</script>
+ </script>
 
 <div x-data="{ open: false }" class="flex justify-center">
   <Button
@@ -46,7 +47,7 @@ const MenuItems = [
         d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
     </svg>
   </Button>
-
+ 
   <Menu class={ClassName}>
     {
       MenuItems.map((item) => (
