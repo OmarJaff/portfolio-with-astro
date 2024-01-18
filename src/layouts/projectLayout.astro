@@ -120,7 +120,7 @@ const FormatedProjectDate = new Date(frontmatter.date).toLocaleString("en-US", {
       </div>
     </header>
 
-    <div class="mx-auto max-w-7xl px-6 lg:px-8 mt-24 sm:mt-32 lg:mt-40">
+    <div class="mx-auto max-w-6xl px-6 lg:px-8 mt-24 sm:mt-32 lg:mt-40">
       <div class="mx-auto max-w-3xl">
         <div
           class="grayscale-0 prose lg:prose-xl hover:prose-img:opacity-90 prose-img:transition-opacity duration-600 prose-a:underline prose-a:text-blue-700 hover:prose-a:text-blue-900 prose-neutral dark:prose-invert"
@@ -132,7 +132,7 @@ const FormatedProjectDate = new Date(frontmatter.date).toLocaleString("en-US", {
             )
           }
         </div>
-        <h2 class="mt-12 font-semibold dark:text-neutral-200 text-neutral-950 text-2xl">What is done?</h2>
+        <h2 class="mt-12 font-semibold dark:text-neutral-200 text-neutral-950 text-2xl">Technologies and Skills:</h2>
         <ul role="list" class="flex flex-wrap gap-4 sm:gap-x-4 list-none mt-6">
           {
             frontmatter.technologies &&
@@ -143,7 +143,16 @@ const FormatedProjectDate = new Date(frontmatter.date).toLocaleString("en-US", {
               ))
           }
         </ul>
+          <a href="/projects"  class="pt-16 text-neutral-950 dark:text-neutral-300 flex gap-x-2 items-center  underline-offset-4 underline ">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+            <path fill-rule="evenodd" d="M18 10a.75.75 0 0 1-.75.75H4.66l2.1 1.95a.75.75 0 1 1-1.02 1.1l-3.5-3.25a.75.75 0 0 1 0-1.1l3.5-3.25a.75.75 0 1 1 1.02 1.1l-2.1 1.95h12.59A.75.75 0 0 1 18 10Z" clip-rule="evenodd" />
+          </svg>
+
+           back to projects 
+        </a>
       </div>
+     
     </div>
+   
   </div>
 </Layout>
