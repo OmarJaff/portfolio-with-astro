@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-
+import ImageContainer from "../components/ImageContainer";
 const { frontmatter } = Astro.props;
 
 const FormatedProjectDate = new Date(frontmatter.date).toLocaleString("en-US", {
@@ -8,8 +8,9 @@ const FormatedProjectDate = new Date(frontmatter.date).toLocaleString("en-US", {
 });
 ---
 
-<script type="module" is:inline>
-  import { animate, scroll } from "../../node_modules/motion";
+<!-- <script  is:inline>
+  import { animate, scroll } from "motion";
+
   const rootElement = document.getElementById("rootElement");
 
   scroll(
@@ -34,7 +35,7 @@ const FormatedProjectDate = new Date(frontmatter.date).toLocaleString("en-US", {
       offset: ["start start", "end end"],
     }
   );
-</script>
+</script> -->
 
 <Layout title={frontmatter.title}>
   <div class="space-y-20 dark:text-white">
@@ -103,18 +104,7 @@ const FormatedProjectDate = new Date(frontmatter.date).toLocaleString("en-US", {
           class="-my-px mx-auto max-w-[76rem] bg-neutral-200 dark:bg-neutral-800"
         >
         {  frontmatter.image && 
-          <div class="group relative">
-            <img
-              id="projectimg"
-              alt=`${frontmatter.title}'s project image`
-              width="3648"
-              height="3117"
-              decoding="async"
-              class="w-full"
-              sizes="(min-width: 1216px) 76rem, 100vw"
-              src=`${frontmatter.image}`
-            />
-          </div>
+          <ImageContainer  client:load title="project's image" src={frontmatter.image} ></ImageContainer>
         }
         </div>
       </div>
