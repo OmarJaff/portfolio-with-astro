@@ -1,30 +1,30 @@
-import ReactDOM from 'react-dom';
+import React from 'react';
 
 import { animate, scroll } from "motion";
 
  
-scroll(
-  animate(
-    "#projectimg",
-    {
-      filter: [
-        "grayscale(100%)",
-        "grayscale(100%)",
-        "grayscale(0%)",
-        "grayscale(0%)",
-        "grayscale(0%)",
-        "grayscale(100%)",
-        "grayscale(100%)",
-      ],
-    },
-    {
-      easing: ["ease-in", "linear", "ease-out"],
-    }
-  ),
-  {
-    offset: ["start start", "end end"],
-  }
-);
+// scroll(
+//   animate(
+//     "#projectimg",
+//     {
+//       filter: [
+//         "grayscale(100%)",
+//         "grayscale(100%)",
+//         "grayscale(0%)",
+//         "grayscale(0%)",
+//         "grayscale(0%)",
+//         "grayscale(100%)",
+//         "grayscale(100%)",
+//       ],
+//     },
+//     {
+//       easing: ["ease-in", "linear", "ease-out"],
+//     }
+//   ),
+//   {
+//     offset: ["start start", "end end"],
+//   }
+// );
 
 class ImageContainer extends React.Component {
     
