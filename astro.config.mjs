@@ -8,8 +8,8 @@ import netlify from "@astrojs/netlify";
 
 // https://astro.build/config
 export default defineConfig({
-  output: "server",
-  site: "https://sage-marzipan-dfee85.netlify.app",
-  integrations: [tailwind(), alpinejs(), react(), markdoc()],
+  output: "hybrid",
+  site: "https://65a8ed4661dae25bc8151f40--iridescent-pony-fb7c27.netlify.app",
+  integrations: [tailwind(), alpinejs(), react(), keystatic(), markdoc()],
   adapter: netlify(),
 });

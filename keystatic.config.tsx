@@ -57,8 +57,8 @@ export default config({
           dividers: true,
           links: true,
           images: {
-            directory: "/public/images/articles/",
-            publicPath: "/public/images/articles/",
+            directory: "/images/articles/",
+            publicPath: "/images/articles/",
             schema: {
               title: fields.text({
                 label: "Caption",
@@ -142,20 +142,20 @@ export default config({
         project_icon: fields.image({
           label: "Project Icon (For Light Theme)",
           validation: { isRequired: true },
-          directory: "/public/images/projects/",
-          publicPath: "/public/images/projects/",
+          directory: "/images/projects/",
+          publicPath: "/images/projects/",
         }),
         dark_project_icon: fields.image({
           label: "Project Icon (For Dark Theme)",
           validation: { isRequired: true },
-          directory: "/public/images/projects/",
-          publicPath: "/public/images/projects/",
+          directory: "/images/projects/",
+          publicPath: "/images/projects/",
         }),
         image: fields.image({
           label: "Project Image",
           validation: { isRequired: false },
-          directory: "/public/images/projects/",
-          publicPath: "/public/images/projects/",
+          directory: "/images/projects/",
+          publicPath: "/images/projects/",
         }),
         introduction: fields.text({
           label: "Introduction",
@@ -190,8 +190,8 @@ export default config({
           dividers: true,
           links: true,
           images: {
-            directory: "/public/images/projects/",
-            publicPath: "/public/images/projects/",
+            directory: "/images/projects/",
+            publicPath: "/images/projects/",
             schema: {
               title: fields.text({
                 label: "Caption",
