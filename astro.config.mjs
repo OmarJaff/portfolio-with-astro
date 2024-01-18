@@ -9,6 +9,7 @@ import netlify from "@astrojs/netlify";
 // https://astro.build/config
 export default defineConfig({
   output: "hybrid",
+  site: "https://sage-marzipan-dfee85.netlify.app",
   integrations: [tailwind(), alpinejs(), react(), keystatic(), markdoc()],
   adapter: netlify(),
 });
