@@ -25,7 +25,7 @@ const { class: className } = Astro.props;
   <div
     x-show="open"
     x-transition.opacity
-    class="fixed inset-0 backdrop-blur-sm dark:bg-black/80 opacity-100"
+    class="fixed inset-0 backdrop-blur-sm  bg-zinc-600/80  z-50 dark:bg-black/80"
   >
   </div>
 
@@ -34,7 +34,7 @@ const { class: className } = Astro.props;
     x-show="open"
     x-transition
     x-on:click="open = false"
-    class="relative flex min-h-screen items-start justify-center p-6"
+    class="relative flex min-h-screen items-start justify-center z-50 p-6"
   >
     <div
       x-on:click.stop
