@@ -6,7 +6,8 @@ interface Props {
 const { title } = Astro.props;
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { ViewTransitions } from "astro:transitions";
+import { ViewTransitions, initial } from "astro:transitions";
+ 
 ---
 
 <!doctype html>
@@ -25,16 +26,16 @@ import { ViewTransitions } from "astro:transitions";
       const setDarkMode = () => {
         if (typeof window !== "undefined") {
           const isSystemColorSchemeDark = window.matchMedia(
-            "(prefers-color-scheme: dark)"
+            "(prefers-color-scheme: light)"
           ).matches;
           const storageTheme = localStorage.getItem("theme");
           if (!storageTheme && isSystemColorSchemeDark) {
-            document.documentElement.classList.add("dark");
-          } else if (storageTheme === "light") {
             document.documentElement.classList.add("light");
+          } else if (storageTheme === "dark") {
+            document.documentElement.classList.add("dark");
           } else {
             // we already server render light theme
-            document.documentElement.classList.add("dark");
+            document.documentElement.classList.add("light");
             // localStorage.theme = "light";
           }
         }
@@ -45,13 +46,15 @@ import { ViewTransitions } from "astro:transitions";
 
       document.addEventListener("astro:after-swap", setDarkMode);
     </script>
-    <ViewTransitions />
+   
   </head>
   <body
+  
     class="antialiased scroll-smooth pt-8 md:pt-10 bg-primary-white dark:bg-neutral-950 selection:text-white selection:bg-primary-black-base dark:selection:text-black dark:selection:bg-white/80"
   >
     <Header />
-    <body>
+     <ViewTransitions  />
+    <body transition:animate="initial">
       <slot />
     </body>
     <Footer />

@@ -9,7 +9,7 @@ const { class: className } = Astro.props;
     Alpine.data("toggler", () => ({
       theme: "",
       init() {
-        this.theme = localStorage.theme;
+        this.theme = 'light';
       },
       toggle() {
         if (
