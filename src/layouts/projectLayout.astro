@@ -7,35 +7,7 @@ const FormatedProjectDate = new Date(frontmatter.date).toLocaleString("en-US", {
   year: "numeric",
 });
 ---
-
-<!-- <script  is:inline>
-  import { animate, scroll } from "motion";
-
-  const rootElement = document.getElementById("rootElement");
-
-  scroll(
-    animate(
-      "#projectimg",
-      {
-        filter: [
-          "grayscale(100%)",
-          "grayscale(100%)",
-          "grayscale(0%)",
-          "grayscale(0%)",
-          "grayscale(0%)",
-          "grayscale(100%)",
-          "grayscale(100%)",
-        ],
-      },
-      {
-        easing: ["ease-in", "linear", "ease-out"],
-      }
-    ),
-    {
-      offset: ["start start", "end end"],
-    }
-  );
-</script> -->
+ 
 
 <Layout title={frontmatter.title}>
   <div class="space-y-20 dark:text-white">
